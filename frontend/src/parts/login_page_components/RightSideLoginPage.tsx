@@ -1,9 +1,9 @@
-import "../../styles/Login.module.css"
+import styles from "../../styles/Login.module.css"
 
 function RightSideLoginPage() {
     return(
-        <div className="right-side-login-page">
-
+        <div className={styles.rightSideLoginPage}>
+            <h1>Right</h1>
         </div>
     );
 }
