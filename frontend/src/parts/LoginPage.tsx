@@ -1,0 +1,41 @@
+import {Fragment} from "react";
+import "../styles/Login.css"
+import FaviconImage from "../assets/favicon-48.png"
+
+function LoginPage() {
+
+    return(
+        <Fragment>
+            <div className="container">
+                <div className="left-side">
+                    <div className="header-left-side">
+                        <img src={FaviconImage} className="favicon-image" alt="Favicon Image"/>
+                        <h1 className="heading-title">EventMind AI</h1>
+
+                        `<div className="app-info-top">
+                            <h2>
+                                Plan any event, anywhere in India
+                            </h2>
+                            <p>
+                                From a Birthday Part to National Summit, One Platform runs its end to end
+                            </p>
+                        </div>
+                        <div className="app-info-bottom">
+                            <h2>
+                                One login. Every event running at once, none of them colliding.
+                            </h2>
+                            <p>
+                                Venues, vendors, budgets and schedules, coordinated across every category from a birthday to a Kumbh Mela.
+                            </p>
+                        `</div>
+                    </div>
+                </div>
+                <div className="right-side">
+
+                </div>
+            </div>
+        </Fragment>
+    )
+}
+
+export default LoginPage;
