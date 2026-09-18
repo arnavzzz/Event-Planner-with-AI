@@ -1,9 +1,13 @@
 import FaviconImage from "../../assets/favicon/favicon-128.svg";
 import styles from "../../styles/Login.module.css"
 
-function LeftSideLoginPage() {
+interface LeftSideLoginPageProps{
+    isDark: boolean;
+}
+
+function LeftSideLoginPage({isDark}:LeftSideLoginPageProps) {
     return(
-        <div className={styles.leftSideLoginPage}>
+        <div className={isDark ? styles.leftSideLoginPage:styles.leftSideLoginPageDark}>
             <div className="header-left-side">
                 <img src={FaviconImage} className="favicon-image" alt="Favicon Image"/>
                 <h1 className="heading-title">EventMind AI</h1>

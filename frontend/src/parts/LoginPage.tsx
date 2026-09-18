@@ -2,12 +2,17 @@ import styles from "../styles/Login.module.css"
 import LeftSideLoginPage from "./login_page_components/LeftSideLoginPage.tsx";
 import RightSideLoginPage from "./login_page_components/RightSideLoginPage.tsx";
 
-function LoginPage() {
+interface LoginPageProps{
+    isDark: boolean;
+    onToggle: () => void
+}
+
+function LoginPage({isDark, onToggle}:LoginPageProps) {
 
     return(
         <div className={styles.container}>
-            <LeftSideLoginPage/>
-            <RightSideLoginPage/>
+            <LeftSideLoginPage isDark={isDark}/>
+            <RightSideLoginPage isDark={isDark} onToggle={onToggle}/>
         </div>
     )
 }
