@@ -1,3 +1,23 @@
+:root{
+    --page-backgorund: #f7faf8;
+    --card-surface: #ffffff;
+    --border: #dce6e1;
+    --brand-green: #128a5e;
+    --brand-orange: #f2a33d;
+    --orange-hover: #d9861a;
+    --text-primary: #16241e;
+    --text-muted: #64766e;
+    --text-on-orange: #f1f5f3;
+
+    --page-backgorund-dark: #0b1f1a;
+    --card-surface-dark: #14231d;
+    --border-dark: #263a32;
+    --brand-green-dark: #1f9d6b;
+    --orange-hover-dark: #f5b457;
+    --text-primary-dark: #f5f7f5;
+    --text-muted-dark: #9fb0a8;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,16 +28,5 @@
 .container, .containerDark{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-}
-
-.leftSideLoginPage {
-    background-color: #c084fc;
-}
-
-.rightSideLoginPage {
-    background-color: aquamarine;
-}
-
-.loginToggleContainer{
-    background-color: chartreuse;
+    background-color: var(--page-backgorund);
 }
