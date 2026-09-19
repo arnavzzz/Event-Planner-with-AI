@@ -12,7 +12,6 @@ interface RightSideLoginPageProps{
 function RightSideLoginPage({isDark, onToggle, onSuccess}:RightSideLoginPageProps) {
     return(
         <div className={isDark?styles.rightSideLoginPage:styles.rightSideLoginPageDark}>
-            <h1>Right</h1>
             <LoginDayNightToggleButton isDark={isDark} onToggle={onToggle}/>
             <LoginForm isDark={isDark} onSuccess={onSuccess}/>
         </div>

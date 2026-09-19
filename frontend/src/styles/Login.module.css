@@ -1,5 +1,5 @@
 :root{
-    --page-backgorund: #f7faf8;
+    --page-background: #f7faf8;
     --card-surface: #ffffff;
     --border: #dce6e1;
     --brand-green: #128a5e;
@@ -9,7 +9,7 @@
     --text-muted: #64766e;
     --text-on-orange: #f1f5f3;
 
-    --page-backgorund-dark: #0b1f1a;
+    --page-background-dark: #0b1f1a;
     --card-surface-dark: #14231d;
     --border-dark: #263a32;
     --brand-green-dark: #1f9d6b;
@@ -23,10 +23,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    border: 0;
 }
 
 .container, .containerDark{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: var(--page-backgorund);
+}
+
+.container {
+    background-color: var(--page-background);
+}
+
+.container {
+    background-color: var(--page-background-dark);
 }
