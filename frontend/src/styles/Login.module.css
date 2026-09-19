@@ -5,6 +5,11 @@
     font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+.container, .containerDark{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .leftSideLoginPage {
     background-color: #c084fc;
 }
