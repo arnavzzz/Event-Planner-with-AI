@@ -3,6 +3,7 @@ import {TABS, type OrganTabId} from "./EventOrganizerDashboardTabs.ts";
 import styles from "../../../styles/EventOrganizer.module.css"
 import EventOrganizerNav from "./event-organizer-components/EventOrganizerNav.tsx";
 import EventOrganizerHeader from "./event-organizer-components/EventOrganizerHeader.tsx";
+import EventOrganizerFooter from "./event-organizer-components/EventOrganizerFooter.tsx";
 
 
 interface EventOrganizerDashboardProps{
@@ -31,6 +32,10 @@ function EventOrganizerDashboard({isDark, onToggle, onLogOut}:EventOrganizerDash
                 onTabChange={(id) => setActiveTab(id as OrganTabId)}
             />
 
+            <EventOrganizerFooter
+                isDark={isDark}
+                activeLabel={activeLabel}
+            />
 
         </div>
     )
