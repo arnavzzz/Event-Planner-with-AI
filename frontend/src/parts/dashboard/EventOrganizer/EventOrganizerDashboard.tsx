@@ -2,6 +2,8 @@ import React from "react";
 import {TABS, type OrganTabId} from "./EventOrganizerDashboardTabs.ts";
 import styles from "../../../styles/EventOrganizer.module.css"
 import EventOrganizerNav from "./event-organizer-components/EventOrganizerNav.tsx";
+import EventOrganizerHeader from "./event-organizer-components/EventOrganizerHeader.tsx";
+
 
 interface EventOrganizerDashboardProps{
     isDark: boolean;
@@ -16,7 +18,11 @@ function EventOrganizerDashboard({isDark, onToggle, onLogOut}:EventOrganizerDash
 
     return(
         <div className={isDark? styles.container: styles.containerDark}>
-            <h1>Event Organizer Dashboard</h1>
+            <EventOrganizerHeader
+                isDark={isDark}
+                onToggle={onToggle}
+                onLogOut={onLogOut}
+            />
 
             <EventOrganizerNav
                 isDark={isDark}
@@ -25,7 +31,7 @@ function EventOrganizerDashboard({isDark, onToggle, onLogOut}:EventOrganizerDash
                 onTabChange={(id) => setActiveTab(id as OrganTabId)}
             />
 
-            <button onClick={onLogOut}>Log Out</button>
+
         </div>
     )
 }

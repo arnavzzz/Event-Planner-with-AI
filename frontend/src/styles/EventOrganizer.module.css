@@ -5,3 +5,11 @@
     font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     border: 0;
 }
+
+.container {
+    background-color: #1f9d6b;
+}
+
+.containerDark {
+    background-color: #d9861a;
+}

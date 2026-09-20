@@ -1,13 +1,17 @@
+import styles from "../../../../styles/EventOrganizer.module.css"
+import RightSideHeader from "./header-components/RightSideHeader.tsx";
+
 interface EventOrganizerHeaderProps {
     isDark: boolean;
     onToggle: () => void;
     onLogOut: () => void;
-    activeLabel: string
 }
 
-function EventOrganizerHeader({isDark, onToggle, onLogOut, activeLabel}:EventOrganizerHeaderProps){
+function EventOrganizerHeader({isDark, onToggle, onLogOut}:EventOrganizerHeaderProps){
     return(
-
+        <header className={isDark?styles.eventHeader:styles.eventHeaderDark}>
+            <RightSideHeader isDark={isDark} onToggle={onToggle} onLogOut={onLogOut} />
+        </header>
     )
 }
 
