@@ -17,13 +17,13 @@ function EventOrganizerDashboard({isDark, onToggle, onLogOut}:EventOrganizerDash
     return(
         <div className={isDark? styles.container: styles.containerDark}>
             <h1>Event Organizer Dashboard</h1>
+
             <EventOrganizerNav
                 isDark={isDark}
                 tabs={TABS}
                 activeTab={activeTab}
                 onTabChange={(id) => setActiveTab(id as OrganTabId)}
             />
-            <h2>{activeLabel}</h2>
 
             <button onClick={onLogOut}>Log Out</button>
         </div>
