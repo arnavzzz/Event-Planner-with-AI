@@ -1,0 +1,1 @@
+import styles from "../../../../styles/event-organizer/overview.module.css"

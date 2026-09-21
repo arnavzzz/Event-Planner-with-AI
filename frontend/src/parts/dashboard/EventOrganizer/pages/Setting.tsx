@@ -1,10 +1,10 @@
 import styles from "../../../../styles/event-organizer/setting.module.css"
 
-interface OverviewProps{
+interface SettingProps{
     isDark: boolean;
 }
 
-export default function  Setting({isDark}:OverviewProps) {
+export default function  Setting({isDark}:SettingProps) {
     return(
         <div className={isDark?styles.container:styles.containerDark}>
             <h1>Settings Tab</h1>
