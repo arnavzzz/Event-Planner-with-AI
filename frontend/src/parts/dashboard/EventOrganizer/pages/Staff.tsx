@@ -7,7 +7,7 @@ interface StaffProps{
 export default function Staff ({isDark}:StaffProps) {
     return(
         <div className={isDark?styles.container:styles.containerDark}>
-            <h1>Overview Tab</h1>
+            <h1>Staff Tab</h1>
         </div>
     )
 }

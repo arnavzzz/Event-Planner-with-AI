@@ -7,7 +7,7 @@ interface GlobalAiAgentsProps {
 export default function GlobalAiAgents({isDark}:GlobalAiAgentsProps) {
     return(
         <div className={isDark?styles.container:styles.containerDark}>
-            <h1>Overview Tab</h1>
+            <h1>Global AI Agents Tab</h1>
         </div>
     )
 }

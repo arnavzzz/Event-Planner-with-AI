@@ -7,7 +7,7 @@ interface TasksProps {
 export default function Task ({isDark}:TasksProps) {
     return (
         <div className={isDark?styles.container:styles.containerDark}>
-            <h1>Overview Tab</h1>
+            <h1>Tasks Tab</h1>
         </div>
     )
 }

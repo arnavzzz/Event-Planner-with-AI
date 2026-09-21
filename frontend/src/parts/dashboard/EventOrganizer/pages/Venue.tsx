@@ -7,7 +7,7 @@ interface VenueProps {
 export default function Venue ({isDark}:VenueProps) {
     return (
         <div className={isDark?styles.container:styles.containerDark}>
-            <h1>Overview Tab</h1>
+            <h1>Venues Tab</h1>
         </div>
     )
 }
