@@ -4,6 +4,7 @@ import styles from "../../../styles/EventOrganizer.module.css"
 import EventOrganizerNav from "./event-organizer-components/EventOrganizerNav.tsx";
 import EventOrganizerHeader from "./event-organizer-components/EventOrganizerHeader.tsx";
 import EventOrganizerFooter from "./event-organizer-components/EventOrganizerFooter.tsx";
+import EventOrganizerMainBody from "./EventOrganizerMainBody.tsx";
 
 
 interface EventOrganizerDashboardProps{
@@ -31,6 +32,8 @@ function EventOrganizerDashboard({isDark, onToggle, onLogOut}:EventOrganizerDash
                 activeTab={activeTab}
                 onTabChange={(id) => setActiveTab(id as OrganTabId)}
             />
+
+            <EventOrganizerMainBody isDark={isDark} activeTab={activeTab} />
 
             <EventOrganizerFooter
                 isDark={isDark}
