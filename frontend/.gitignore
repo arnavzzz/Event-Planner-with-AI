@@ -24,6 +24,6 @@ dist-ssr
 *.sw?
 
 #other file be me
-/frontendexp
+/frontaendexp
 /.idea
 /ui-ux-design/
