@@ -13,7 +13,7 @@ function LoginPage({isDark, onToggle, onSuccess}:LoginPageProps) {
 
     return(
         <div className={isDark?styles.container:styles.containerDark}>
-            <LeftSideLoginPage isDark={isDark}/>
+            <LeftSideLoginPage />
             <RightSideLoginPage
                 isDark={isDark}
                 onToggle={onToggle}

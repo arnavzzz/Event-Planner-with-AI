@@ -1,14 +1,17 @@
-:root{
+:root {
     --page-background: #f7faf8;
     --card-surface: #ffffff;
     --border: #dce6e1;
+
     --brand-green: #128a5e;
     --brand-orange: #f2a33d;
     --orange-hover: #d9861a;
+
     --text-primary: #16241e;
     --text-muted: #64766e;
     --text-on-orange: #f1f5f3;
 
+    /*Dark Theme*/
     --page-background-dark: #0b1f1a;
     --card-surface-dark: #14231d;
     --border-dark: #263a32;
@@ -16,6 +19,30 @@
     --orange-hover-dark: #f5b457;
     --text-primary-dark: #f5f7f5;
     --text-muted-dark: #9fb0a8;
+
+    /*Hero Gradient*/
+    --hero-green-dark: #0a4036;
+    --hero-green-mid: #07352d;
+    --hero-green-end: #082f28;
+    --hero-green-glow: #0e5f4f;
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-50%);
+    }
+    to{
+        transform: translateX(0%);
+    }
 }
 
 * {
@@ -26,15 +53,61 @@
     border: 0;
 }
 
-.container, .containerDark{
+.container, .containerDark {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
-.container {
-    background-color: var(--page-background);
+.leftSideLoginPage {
+    background: radial-gradient(
+            circle at 8% 5%,
+            var(--hero-green-glow) 0%,
+            #0a493d 25%,
+            transparent 55%
+    ),
+    linear-gradient(
+            110deg,
+            var(--hero-green-dark) 0%,
+            var(--hero-green-mid) 50%,
+            var(--hero-green-end) 100%
+    );
+    color: var(--text-primary-dark);
+
 }
 
-.container {
-    background-color: var(--page-background-dark);
+.eventTickerLeft, .eventTickerRight {
+    overflow: hidden;
+    /*-webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 8%, transparent);*/
+    /*mask-image: linear-gradient(90deg, transparent, #000 8%, #000 8%, transparent);*/
+}
+
+.eventTickerLeft, .eventTickerRight {
+    margin-top: auto;
+}
+
+.eventTrackLeft, .eventTrackRight {
+    display: flex;
+    align-items: center;
+    width: max-content;
+}
+
+.eventTickerLeft {
+    animation: moveLeft 25s linear infinite;
+}
+
+.eventTickerRight {
+    animation: moveRight 25s linear infinite;
+}
+
+.eventCard {
+    flex: 0 0 auto;
+    white-space: nowrap;
+
+    margin-right: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
 }

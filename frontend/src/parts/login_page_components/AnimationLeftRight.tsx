@@ -1,4 +1,4 @@
-import {Fragment} from "react"
+import styles from "../../styles/Login.module.css"
 
 interface AnimationLeftRightProps {
     events: string[]
@@ -10,24 +10,27 @@ function AnimationLeftRight({events}: AnimationLeftRightProps) {
     const firstPart = events.slice(0, middle)
     const secondPart = events.slice(middle)
     return (
-        <Fragment>
-            <div>
-                <ul>
-                    {firstPart.map((event, index) => (
-                        <li key={index}>
-                            {event}
-                        </li>
+
+        <div>
+            <div className={styles.eventTickerLeft}>
+                <div className={styles.eventTrackLeft}>
+                    {[...firstPart, ...firstPart].map((name, index) => (
+                        <div key={index} className={styles.eventCard}>
+                            {name}
+                        </div>
                     ))}
-                </ul>
-                <ul>
-                    {secondPart.map((event, index) => (
-                        <li key={index}>
-                            {event}
-                        </li>
-                    ))}
-                </ul>
+                </div>
             </div>
-        </Fragment>
+            <div className={styles.eventTickerRight}>
+                <div className={styles.eventTrackRight}>
+                    {[...secondPart, ...secondPart].map((name, index) => (
+                        <div key={index} className={styles.eventCard}>
+                            {name}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
     )
 }
 
