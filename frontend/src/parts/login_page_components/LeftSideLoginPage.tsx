@@ -3,7 +3,11 @@ import styles from "../../styles/Login.module.css"
 import AnimationLeftRight from "./AnimationLeftRight.tsx";
 import React from "react";
 
-function LeftSideLoginPage() {
+interface LeftSideLoginPageProps {
+    isDark: boolean;
+}
+
+function LeftSideLoginPage({isDark}: LeftSideLoginPageProps) {
     const events = ["Kumbh Mela", "Birthday", "BRICS Summit",
         "Diwali Utsav", "Anime Event", "Holi Utsav",
         "AI Fest", "Dauji ka Handa", "Rann Utsav",
@@ -16,40 +20,50 @@ function LeftSideLoginPage() {
     const [visible, setVisible] = React.useState(true)
 
     React.useEffect(() => {
+        let timeout:number
         const interval = setInterval(() => {
             setVisible(false)
 
-            setTimeout(() => {
+            timeout = window.setTimeout(() => {
                 setIndex((prev) => (prev + 1) % events.length)
-                setVisible(false)
+                setVisible(true)
             }, 500)
         }, 2500)
 
-        return () => clearInterval(interval)
+        return () => {clearInterval(interval); clearInterval(timeout)}
     }, [])
 
     return (
-        <div className={styles.leftSideLoginPage}>
-            <div className="header-left-side">
+        <div className={isDark
+            ? styles.leftSideLoginPage
+            : `${styles.leftSideLoginPage} ${styles.leftSideLoginPageLight}`
+        }>
+            <div className={styles.leftSideContent}>
                 <div className={styles.logoTop}>
-                    <img src={FaviconImage} className="favicon-image" alt="Favicon Image"/>
-                    <h1 className="heading-title">EventMind AI</h1>
+                    <img src={FaviconImage} className={styles.logoImage} alt="" />
+                    <h1 className={styles.logoTitle}>EventMind AI</h1>
                 </div>
-                <div className="app-info-top">
-                    <h2>Plan you event</h2>
-                    <h2 className={`event-name-animation ${visible ? "show" : "hide"}`}>
-                        {events[index]}
+                <div className={styles.heroCopy}>
+                    <p className={styles.heroEyebrow}>The event planning workspace</p>
+                    <h2 className={styles.heroHeading}>
+                        Make room for{" "}
+                        <span
+                            key={events[index]}
+                            className={`${styles.eventName} ${visible ? "" : styles.eventNameHidden}`}
+                        >
+                            {events[index]}
+                        </span>
+                        {" "}and everything around it.
                     </h2>
-                    <h2>anywhere in India</h2>
-                    <p>
-                        From a Birthday Part to National Summit, One Platform runs its end to end
+                    <p className={styles.heroDescription}>
+                        From a birthday party to a national summit, bring people, places and plans together in one place.
                     </p>
                 </div>
-                <div className="app-info-bottom">
-                    <h2>
+                <div className={styles.heroBottom}>
+                    <h3 className={styles.heroBottomTitle}>
                         One login. Every event running at once, none of them colliding.
-                    </h2>
-                    <p>
+                    </h3>
+                    <p className={styles.heroBottomDescription}>
                         Venues, vendors, budgets and schedules, coordinated across every category from a birthday to a
                         Kumbh Mela.
                     </p>

@@ -1,6 +1,5 @@
 import LoginPage from "./parts/LoginPage.tsx"
 import EventOrganizerDashboard from "./parts/dashboard/EventOrganizer/EventOrganizerDashboard.tsx";
-import AdminDashboard from "./parts/dashboard/Admin/AdminDashboard.tsx";
 import VendorDashboard from "./parts/dashboard/Vendor/VendorDashboard.tsx";
 import type {Role} from "./auth/credentials.ts"
 import React from "react";
@@ -24,13 +23,6 @@ function App() {
 
     if (role == "event-organizer") {
         return <EventOrganizerDashboard
-            isDark={isDark}
-            onToggle={onToggle}
-            onLogOut={handleLogout}/>
-    }
-
-    if (role == "admin") {
-        return <AdminDashboard
             isDark={isDark}
             onToggle={onToggle}
             onLogOut={handleLogout}/>

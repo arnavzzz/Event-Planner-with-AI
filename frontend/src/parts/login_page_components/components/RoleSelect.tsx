@@ -18,6 +18,7 @@ function RoleSelection({role, onChange, isDark}:RoleSelectionProps) {
                 {ROLES.map((option) =>(
                     <button
                         key = {option.role}
+                        className={styles.roleOption}
                         type="button"
                         role="radio"
                         aria-checked={role === option.role}

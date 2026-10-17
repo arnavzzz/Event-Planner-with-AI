@@ -14,7 +14,6 @@ An intelligent, next-generation **Event Management & Operations Platform** power
 ### 🔐 Multi-Role Access Control
 * **Event Organizer**: Full dashboard access to plan, monitor, and execute events.
 * **Vendor**: Manage service offerings, contracts, and logistics.
-* **Admin**: Platform-wide system management, analytics, and user governance.
 
 ### 🤖 AI-Powered Suite
 * **AI Event Planner**: Automated event schedule generation, budget estimation, and itinerary recommendations.
@@ -42,7 +41,6 @@ Test the application instantly using pre-configured demo credentials:
 | :--- | :--- | :--- |
 | 👑 **Event Organizer** | `eo1@arnav.com` | `123456` |
 | 🤝 **Vendor** | `ve1@arnav.com` | `654321` |
-| 🛡️ **Admin** | `ad1@arnav.com` | `135246` |
 
 ---
 
@@ -73,7 +71,6 @@ event_planner/
     │       ├── LoginPage.tsx       # Auth login interface & dark mode toggle
     │       ├── login_page_components/
     │       └── dashboard/          # Dashboards for each role
-    │           ├── Admin/          # System Admin Dashboard
     │           ├── Vendor/         # Vendor Operations Dashboard
     │           └── EventOrganizer/ # Event Organizer Dashboard & 20+ feature pages
     ├── package.json                # Dependencies and scripts

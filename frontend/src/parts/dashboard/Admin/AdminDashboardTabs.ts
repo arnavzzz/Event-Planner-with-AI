@@ -1,1 +1,0 @@
-// type AdminTabId = "command-center" | "event-management" | "ai-planning" | "schedule" | "venues" | "vendors" | "human-agent" | "budgets" | "guests"| "Catering" | "catering" | "logistics" | "risk" | "emergency" | "permission" | "ai-agentic-control" | "live-monitoring" | "communication-hub" | "reports" | "user" | "setting"

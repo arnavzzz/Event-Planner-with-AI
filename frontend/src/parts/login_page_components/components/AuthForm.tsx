@@ -48,7 +48,7 @@ function AuthForm({mode, onLogin, onSignUp, isDark}:AuthFormProps){
     return (
         <div className={isDark?styles.formPart:styles.formPartDark}>
             <form onSubmit={handleSubmit} noValidate>
-                <RoleSelection role={role} onChange={setRole} isDark={isDark} />
+                {mode === "signup" && <RoleSelection role={role} onChange={setRole} isDark={isDark} />}
                 <label>
                     <span>Email</span>
                     <input
@@ -57,6 +57,7 @@ function AuthForm({mode, onLogin, onSignUp, isDark}:AuthFormProps){
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="arnav@arnav.com"
                         autoComplete="email"
+                        required
                     />
                 </label>
                 <label>
@@ -67,6 +68,7 @@ function AuthForm({mode, onLogin, onSignUp, isDark}:AuthFormProps){
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="••••••••"
                         autoComplete={mode==="login" ? "current-password" : "new-password"}
+                        required
                     />
                 </label>
                 {mode === "signup" && (
@@ -79,14 +81,15 @@ function AuthForm({mode, onLogin, onSignUp, isDark}:AuthFormProps){
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                                 placeholder="••••••••"
                                 autoComplete="new-password"
+                                required
                             />
                         </label>
                     </Fragment>
                 )}
 
-                {formError && <p>{formError}</p>}
+                {formError && <p className={styles.formError} role="alert">{formError}</p>}
 
-                <button type="submit">
+                <button className={styles.submitButton} type="submit">
                     {mode == "login" ? "Log In" : "Create Account"}
                 </button>
 

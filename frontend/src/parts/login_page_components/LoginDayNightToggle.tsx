@@ -9,7 +9,6 @@ interface LoginDayNightToggleButtonProps{
 
 function LoginDayNightToggleButton({isDark,onToggle}:LoginDayNightToggleButtonProps){
 
-
     return(
         <div className={styles.loginToggleContainer}>
             <button
@@ -18,7 +17,7 @@ function LoginDayNightToggleButton({isDark,onToggle}:LoginDayNightToggleButtonPr
                 aria-label={isDark ? "Switch to day mode" : "Switch to night mode"}
             >
                 <img
-                    className={styles.LightimageToggleButton}
+                    className={styles.lightImageToggleButton}
                     src={isDark ? SunIcon: MoonIcon}
                     alt={isDark?"Light Mode":"Dark Mode"}
                 />

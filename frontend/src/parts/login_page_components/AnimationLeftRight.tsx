@@ -11,7 +11,7 @@ function AnimationLeftRight({events}: AnimationLeftRightProps) {
     const secondPart = events.slice(middle)
     return (
 
-        <div>
+        <div className={styles.eventTickerList} aria-hidden="true">
             <div className={styles.eventTickerLeft}>
                 <div className={styles.eventTrackLeft}>
                     {[...firstPart, ...firstPart].map((name, index) => (
