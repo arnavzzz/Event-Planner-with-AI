@@ -47,7 +47,9 @@ An intelligent, full-stack **Event Management & Operations Platform** powered by
 
 ## 🔑 Demo Credentials
 
-Test the application instantly on the [Live Netlify Deployment](https://6ad8627cf0caf035378e6e6d--eventmindai1.netlify.app/) using pre-configured demo accounts:
+<a href="https://6ad8627cf0caf035378e6e6d--eventmindai1.netlify.app/" target="_blank" rel="noopener noreferrer">
+  🚀 Launch EventMind AI
+</a>
 
 | Role | Email | Password | Access Scope |
 | :--- | :--- | :--- | :--- |
