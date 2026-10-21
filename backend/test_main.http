@@ -1,0 +1,135 @@
+# Test your FastAPI + AIML Integration Endpoints
+
+### 1. Root Service Check
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+### 2. System Health & AIML Model Readiness Check
+GET http://127.0.0.1:8000/api/health
+Accept: application/json
+
+### 3. AI Metadata (Supported Event Types & Categories)
+GET http://127.0.0.1:8000/api/ai/metadata
+Accept: application/json
+
+### 4. AI Vendor Recommendation - Wedding ($35,000 budget, 150 guests)
+POST http://127.0.0.1:8000/api/ai/recommend-vendors
+Content-Type: application/json
+Accept: application/json
+
+{
+  "event_type": "Wedding",
+  "client_budget": 35000.0,
+  "guest_count": 150
+}
+
+### 5. AI Vendor Recommendation - Corporate Conference ($60,000 budget, 400 guests)
+POST http://127.0.0.1:8000/api/ai/recommend-vendors
+Content-Type: application/json
+Accept: application/json
+
+{
+  "event_type": "Conference",
+  "client_budget": 60000.0,
+  "guest_count": 400
+}
+
+### 6. Predict Category Budget Allocation Breakdown
+POST http://127.0.0.1:8000/api/ai/predict-budget
+Content-Type: application/json
+Accept: application/json
+
+{
+  "event_type": "Wedding",
+  "client_budget": 30000.0,
+  "guest_count": 120
+}
+
+### 7. Query Vendor Catalog (Filter by Category)
+GET http://127.0.0.1:8000/api/vendors?category=Catering
+Accept: application/json
+
+### 8. Create Event with AI-Recommended Vendors (Create Event Tab Integration)
+POST http://127.0.0.1:8000/api/events/create-with-ai
+Content-Type: application/json
+Accept: application/json
+
+{
+  "eventName": "Tech Summit 2026",
+  "eventType": "Conference",
+  "clientBudget": 45000.0,
+  "guestCount": 250,
+  "startDate": "2026-11-15",
+  "endDate": "2026-11-16",
+  "preferredPackage": "recommended"
+}
+
+### 9. AI Vendor Price Negotiation (Single Vendor)
+POST http://127.0.0.1:8000/api/ai/negotiate-vendor-price
+Content-Type: application/json
+Accept: application/json
+
+{
+  "vendor_id": "CAT-001",
+  "guest_count": 150,
+  "target_budget": 9500.0,
+  "has_flexible_date": true,
+  "has_early_deposit": true
+}
+
+### 10. AI Vendor Price Negotiation (Custom / Sample Vendor with Payload)
+POST http://127.0.0.1:8000/api/ai/negotiate-vendor-price
+Content-Type: application/json
+Accept: application/json
+
+{
+  "vendor_id": "vendor-photo-custom",
+  "guest_count": 100,
+  "target_budget": 3000.0,
+  "has_flexible_date": true,
+  "has_early_deposit": true,
+  "vendor_data": {
+    "id": "vendor-photo-custom",
+    "name": "Cinematic Moments",
+    "category": "Photography",
+    "tier": "Moderate",
+    "base_fee": 1200.0,
+    "per_person_rate": 18.0,
+    "estimated_cost": 3000.0
+  }
+}
+
+### 11. AI Bundle-Wide Price Negotiation (Multi-Vendor Package)
+POST http://127.0.0.1:8000/api/ai/negotiate-bundle
+Content-Type: application/json
+Accept: application/json
+
+{
+  "bundle": {
+    "bundle_name": "Recommended Package",
+    "total_cost": 25000.0,
+    "client_budget": 30000.0,
+    "guest_count": 120,
+    "event_type": "Wedding",
+    "vendors": [
+      {
+        "vendor_id": "CAT-001",
+        "vendor_name": "Royal Feast Catering",
+        "category": "Catering",
+        "tier": "Moderate",
+        "estimated_cost": 10950.0,
+        "budget_allocated": 9500.0
+      },
+      {
+        "vendor_id": "PHO-001",
+        "vendor_name": "Artisan Lens Studio",
+        "category": "Photography",
+        "tier": "Moderate",
+        "estimated_cost": 3800.0,
+        "budget_allocated": 3500.0
+      }
+    ]
+  },
+  "has_flexible_date": true,
+  "has_early_deposit": true
+}

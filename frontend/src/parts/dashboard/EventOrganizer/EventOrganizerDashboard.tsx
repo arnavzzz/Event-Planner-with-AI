@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {TABS, type OrganTabId} from "./EventOrganizerDashboardTabs.ts";
 import styles from "../../../styles/EventOrganizer.module.css"
-import type {EventRecord} from "./EventData.ts";
+import {createSampleEvents, type EventRecord} from "./EventData.ts";
 import EventOrganizerNav from "./event-organizer-components/EventOrganizerNav.tsx";
 import EventOrganizerHeader from "./event-organizer-components/EventOrganizerHeader.tsx";
 import EventOrganizerFooter from "./event-organizer-components/EventOrganizerFooter.tsx";
@@ -16,7 +16,7 @@ interface EventOrganizerDashboardProps{
 
 function EventOrganizerDashboard({isDark, onToggle, onLogOut}:EventOrganizerDashboardProps) {
     const [activeTab, setActiveTab] = useState<OrganTabId>("events");
-    const [events, setEvents] = useState<EventRecord[]>([]);
+    const [events, setEvents] = useState<EventRecord[]>(createSampleEvents);
 
     const handleCreateEvent = (event: EventRecord) => {
         setEvents((currentEvents) => [event, ...currentEvents]);

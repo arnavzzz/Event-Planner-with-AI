@@ -1,0 +1,759 @@
+[
+  {
+    "id": "VEN-001",
+    "name": "Grand Crystal Ballroom",
+    "category": "Venue",
+    "base_fee": 3500,
+    "per_person_rate": 15,
+    "min_capacity": 80,
+    "max_capacity": 500,
+    "rating": 4.8,
+    "reviews": 142,
+    "tier": "Premium",
+    "types": [
+      "Wedding",
+      "Corporate",
+      "Conference"
+    ]
+  },
+  {
+    "id": "VEN-002",
+    "name": "Sunset Botanical Gardens",
+    "category": "Venue",
+    "base_fee": 2800,
+    "per_person_rate": 10,
+    "min_capacity": 50,
+    "max_capacity": 300,
+    "rating": 4.9,
+    "reviews": 195,
+    "tier": "Premium",
+    "types": [
+      "Wedding",
+      "Birthday",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "VEN-003",
+    "name": "Urban Skyline Rooftop",
+    "category": "Venue",
+    "base_fee": 2200,
+    "per_person_rate": 12,
+    "min_capacity": 40,
+    "max_capacity": 200,
+    "rating": 4.7,
+    "reviews": 118,
+    "tier": "Moderate",
+    "types": [
+      "Birthday",
+      "Corporate",
+      "Other"
+    ]
+  },
+  {
+    "id": "VEN-004",
+    "name": "TechHub Innovation Expo Hall",
+    "category": "Venue",
+    "base_fee": 5000,
+    "per_person_rate": 20,
+    "min_capacity": 150,
+    "max_capacity": 1500,
+    "rating": 4.8,
+    "reviews": 88,
+    "tier": "Luxury",
+    "types": [
+      "Corporate",
+      "Conference",
+      "Festival"
+    ]
+  },
+  {
+    "id": "VEN-005",
+    "name": "Rustic Pine Barn & Estate",
+    "category": "Venue",
+    "base_fee": 1800,
+    "per_person_rate": 8,
+    "min_capacity": 30,
+    "max_capacity": 220,
+    "rating": 4.6,
+    "reviews": 94,
+    "tier": "Moderate",
+    "types": [
+      "Wedding",
+      "Birthday",
+      "Other"
+    ]
+  },
+  {
+    "id": "VEN-006",
+    "name": "Community Arts Center & Hall",
+    "category": "Venue",
+    "base_fee": 800,
+    "per_person_rate": 4,
+    "min_capacity": 20,
+    "max_capacity": 180,
+    "rating": 4.3,
+    "reviews": 65,
+    "tier": "Budget",
+    "types": [
+      "Birthday",
+      "Other",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "VEN-007",
+    "name": "Riverside Open Amphitheater",
+    "category": "Venue",
+    "base_fee": 6500,
+    "per_person_rate": 18,
+    "min_capacity": 200,
+    "max_capacity": 3000,
+    "rating": 4.7,
+    "reviews": 76,
+    "tier": "Luxury",
+    "types": [
+      "Festival",
+      "Corporate",
+      "Conference"
+    ]
+  },
+  {
+    "id": "VEN-008",
+    "name": "Heritage Manor House",
+    "category": "Venue",
+    "base_fee": 4200,
+    "per_person_rate": 14,
+    "min_capacity": 50,
+    "max_capacity": 250,
+    "rating": 4.9,
+    "reviews": 160,
+    "tier": "Luxury",
+    "types": [
+      "Wedding",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "VEN-009",
+    "name": "Cozy Loft & Studio 42",
+    "category": "Venue",
+    "base_fee": 600,
+    "per_person_rate": 5,
+    "min_capacity": 15,
+    "max_capacity": 80,
+    "rating": 4.4,
+    "reviews": 52,
+    "tier": "Budget",
+    "types": [
+      "Birthday",
+      "Other"
+    ]
+  },
+  {
+    "id": "VEN-010",
+    "name": "Metropolitan Convention Center",
+    "category": "Venue",
+    "base_fee": 7500,
+    "per_person_rate": 22,
+    "min_capacity": 250,
+    "max_capacity": 2500,
+    "rating": 4.8,
+    "reviews": 110,
+    "tier": "Luxury",
+    "types": [
+      "Conference",
+      "Corporate",
+      "Festival"
+    ]
+  },
+  {
+    "id": "CAT-001",
+    "name": "Epicurean Plated Fine Dining",
+    "category": "Catering",
+    "base_fee": 1200,
+    "per_person_rate": 65,
+    "min_capacity": 40,
+    "max_capacity": 400,
+    "rating": 4.9,
+    "reviews": 210,
+    "tier": "Luxury",
+    "types": [
+      "Wedding",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "CAT-002",
+    "name": "Golden Spoon Gourmet Buffet",
+    "category": "Catering",
+    "base_fee": 800,
+    "per_person_rate": 42,
+    "min_capacity": 30,
+    "max_capacity": 600,
+    "rating": 4.8,
+    "reviews": 178,
+    "tier": "Premium",
+    "types": [
+      "Wedding",
+      "Corporate",
+      "Conference"
+    ]
+  },
+  {
+    "id": "CAT-003",
+    "name": "Fiesta & Fork Casual Feast",
+    "category": "Catering",
+    "base_fee": 500,
+    "per_person_rate": 26,
+    "min_capacity": 25,
+    "max_capacity": 350,
+    "rating": 4.6,
+    "reviews": 134,
+    "tier": "Moderate",
+    "types": [
+      "Birthday",
+      "Festival",
+      "Other"
+    ]
+  },
+  {
+    "id": "CAT-004",
+    "name": "Artisan Street Food Collective",
+    "category": "Catering",
+    "base_fee": 600,
+    "per_person_rate": 22,
+    "min_capacity": 50,
+    "max_capacity": 1500,
+    "rating": 4.7,
+    "reviews": 155,
+    "tier": "Moderate",
+    "types": [
+      "Festival",
+      "Birthday",
+      "Corporate",
+      "Other"
+    ]
+  },
+  {
+    "id": "CAT-005",
+    "name": "Savory Bites Budget Catering",
+    "category": "Catering",
+    "base_fee": 300,
+    "per_person_rate": 16,
+    "min_capacity": 20,
+    "max_capacity": 250,
+    "rating": 4.3,
+    "reviews": 82,
+    "tier": "Budget",
+    "types": [
+      "Birthday",
+      "Other",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "CAT-006",
+    "name": "Crown & Crest Royal Banquet",
+    "category": "Catering",
+    "base_fee": 1800,
+    "per_person_rate": 85,
+    "min_capacity": 50,
+    "max_capacity": 350,
+    "rating": 4.9,
+    "reviews": 140,
+    "tier": "Luxury",
+    "types": [
+      "Wedding",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "CAT-007",
+    "name": "Corporate Express Deli & Hot Bar",
+    "category": "Catering",
+    "base_fee": 400,
+    "per_person_rate": 28,
+    "min_capacity": 30,
+    "max_capacity": 800,
+    "rating": 4.5,
+    "reviews": 98,
+    "tier": "Moderate",
+    "types": [
+      "Corporate",
+      "Conference"
+    ]
+  },
+  {
+    "id": "CAT-008",
+    "name": "Taste of Fusion Global Table",
+    "category": "Catering",
+    "base_fee": 900,
+    "per_person_rate": 48,
+    "min_capacity": 40,
+    "max_capacity": 500,
+    "rating": 4.8,
+    "reviews": 164,
+    "tier": "Premium",
+    "types": [
+      "Wedding",
+      "Corporate",
+      "Birthday"
+    ]
+  },
+  {
+    "id": "PHO-001",
+    "name": "Lumiere Cinematic Studios (Photo+Video)",
+    "category": "Photography",
+    "base_fee": 3200,
+    "per_person_rate": 2,
+    "min_capacity": 20,
+    "max_capacity": 1000,
+    "rating": 4.9,
+    "reviews": 185,
+    "tier": "Luxury",
+    "types": [
+      "Wedding",
+      "Corporate",
+      "Conference"
+    ]
+  },
+  {
+    "id": "PHO-002",
+    "name": "TrueMotion Event Photography",
+    "category": "Photography",
+    "base_fee": 1800,
+    "per_person_rate": 1,
+    "min_capacity": 15,
+    "max_capacity": 800,
+    "rating": 4.8,
+    "reviews": 142,
+    "tier": "Premium",
+    "types": [
+      "Wedding",
+      "Corporate",
+      "Birthday"
+    ]
+  },
+  {
+    "id": "PHO-003",
+    "name": "Vivid Memories Photography",
+    "category": "Photography",
+    "base_fee": 1100,
+    "per_person_rate": 0.5,
+    "min_capacity": 10,
+    "max_capacity": 500,
+    "rating": 4.6,
+    "reviews": 95,
+    "tier": "Moderate",
+    "types": [
+      "Birthday",
+      "Corporate",
+      "Other"
+    ]
+  },
+  {
+    "id": "PHO-004",
+    "name": "SnapCraft Express Photography",
+    "category": "Photography",
+    "base_fee": 600,
+    "per_person_rate": 0,
+    "min_capacity": 10,
+    "max_capacity": 300,
+    "rating": 4.3,
+    "reviews": 68,
+    "tier": "Budget",
+    "types": [
+      "Birthday",
+      "Other"
+    ]
+  },
+  {
+    "id": "PHO-005",
+    "name": "Prestige Media & Drone Coverage",
+    "category": "Photography",
+    "base_fee": 2600,
+    "per_person_rate": 1.5,
+    "min_capacity": 30,
+    "max_capacity": 2000,
+    "rating": 4.9,
+    "reviews": 112,
+    "tier": "Luxury",
+    "types": [
+      "Wedding",
+      "Festival",
+      "Conference"
+    ]
+  },
+  {
+    "id": "PHO-006",
+    "name": "Moments In Time Portraiture",
+    "category": "Photography",
+    "base_fee": 1400,
+    "per_person_rate": 1,
+    "min_capacity": 15,
+    "max_capacity": 400,
+    "rating": 4.7,
+    "reviews": 88,
+    "tier": "Moderate",
+    "types": [
+      "Wedding",
+      "Birthday",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "DEC-001",
+    "name": "Opulent Petals & Crystal Decor",
+    "category": "Decor",
+    "base_fee": 2800,
+    "per_person_rate": 6,
+    "min_capacity": 30,
+    "max_capacity": 500,
+    "rating": 4.9,
+    "reviews": 160,
+    "tier": "Luxury",
+    "types": [
+      "Wedding",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "DEC-002",
+    "name": "Modern Elegance Event Stylists",
+    "category": "Decor",
+    "base_fee": 1600,
+    "per_person_rate": 4,
+    "min_capacity": 20,
+    "max_capacity": 400,
+    "rating": 4.7,
+    "reviews": 125,
+    "tier": "Premium",
+    "types": [
+      "Wedding",
+      "Birthday",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "DEC-003",
+    "name": "Boho Bliss & Rustic Flora",
+    "category": "Decor",
+    "base_fee": 1100,
+    "per_person_rate": 3,
+    "min_capacity": 20,
+    "max_capacity": 300,
+    "rating": 4.6,
+    "reviews": 90,
+    "tier": "Moderate",
+    "types": [
+      "Wedding",
+      "Birthday",
+      "Other"
+    ]
+  },
+  {
+    "id": "DEC-004",
+    "name": "Balloon Pop & Party Themes",
+    "category": "Decor",
+    "base_fee": 450,
+    "per_person_rate": 1.5,
+    "min_capacity": 10,
+    "max_capacity": 200,
+    "rating": 4.4,
+    "reviews": 85,
+    "tier": "Budget",
+    "types": [
+      "Birthday",
+      "Other"
+    ]
+  },
+  {
+    "id": "DEC-005",
+    "name": "Corporate Brand Stage & Booth Scenics",
+    "category": "Decor",
+    "base_fee": 2400,
+    "per_person_rate": 3.5,
+    "min_capacity": 50,
+    "max_capacity": 1500,
+    "rating": 4.8,
+    "reviews": 75,
+    "tier": "Premium",
+    "types": [
+      "Corporate",
+      "Conference",
+      "Festival"
+    ]
+  },
+  {
+    "id": "DEC-006",
+    "name": "Minimalist Chic Tablescapes",
+    "category": "Decor",
+    "base_fee": 850,
+    "per_person_rate": 2.5,
+    "min_capacity": 15,
+    "max_capacity": 250,
+    "rating": 4.5,
+    "reviews": 60,
+    "tier": "Moderate",
+    "types": [
+      "Birthday",
+      "Corporate",
+      "Wedding"
+    ]
+  },
+  {
+    "id": "AV-001",
+    "name": "Apex Stage Pro AV & Concert Lighting",
+    "category": "AudioVisual",
+    "base_fee": 3800,
+    "per_person_rate": 2,
+    "min_capacity": 80,
+    "max_capacity": 2500,
+    "rating": 4.9,
+    "reviews": 105,
+    "tier": "Luxury",
+    "types": [
+      "Festival",
+      "Conference",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "AV-002",
+    "name": "Pulse Tech Sound & Stage Lighting",
+    "category": "AudioVisual",
+    "base_fee": 2000,
+    "per_person_rate": 1.5,
+    "min_capacity": 40,
+    "max_capacity": 800,
+    "rating": 4.8,
+    "reviews": 130,
+    "tier": "Premium",
+    "types": [
+      "Corporate",
+      "Conference",
+      "Wedding",
+      "Festival"
+    ]
+  },
+  {
+    "id": "AV-003",
+    "name": "Harmonic Sound & Ambience Lighting",
+    "category": "AudioVisual",
+    "base_fee": 1200,
+    "per_person_rate": 1,
+    "min_capacity": 25,
+    "max_capacity": 400,
+    "rating": 4.7,
+    "reviews": 95,
+    "tier": "Moderate",
+    "types": [
+      "Wedding",
+      "Birthday",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "AV-004",
+    "name": "ClearTone PA & Mic Rental",
+    "category": "AudioVisual",
+    "base_fee": 450,
+    "per_person_rate": 0.5,
+    "min_capacity": 15,
+    "max_capacity": 200,
+    "rating": 4.3,
+    "reviews": 72,
+    "tier": "Budget",
+    "types": [
+      "Birthday",
+      "Other",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "AV-005",
+    "name": "OmniStream Conference Hybrid Tech",
+    "category": "AudioVisual",
+    "base_fee": 2800,
+    "per_person_rate": 2.5,
+    "min_capacity": 50,
+    "max_capacity": 1200,
+    "rating": 4.9,
+    "reviews": 88,
+    "tier": "Luxury",
+    "types": [
+      "Conference",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "ENT-001",
+    "name": "The Royal Velvet 8-Piece Big Band",
+    "category": "Entertainment",
+    "base_fee": 3500,
+    "per_person_rate": 0,
+    "min_capacity": 50,
+    "max_capacity": 1000,
+    "rating": 4.9,
+    "reviews": 150,
+    "tier": "Luxury",
+    "types": [
+      "Wedding",
+      "Corporate",
+      "Festival"
+    ]
+  },
+  {
+    "id": "ENT-002",
+    "name": "DJ Nexus & Laser Show",
+    "category": "Entertainment",
+    "base_fee": 1600,
+    "per_person_rate": 0,
+    "min_capacity": 30,
+    "max_capacity": 800,
+    "rating": 4.8,
+    "reviews": 165,
+    "tier": "Premium",
+    "types": [
+      "Wedding",
+      "Birthday",
+      "Festival",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "ENT-003",
+    "name": "GrooveLine Acoustic Duo & Trio",
+    "category": "Entertainment",
+    "base_fee": 950,
+    "per_person_rate": 0,
+    "min_capacity": 20,
+    "max_capacity": 350,
+    "rating": 4.7,
+    "reviews": 110,
+    "tier": "Moderate",
+    "types": [
+      "Wedding",
+      "Birthday",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "ENT-004",
+    "name": "SpinMaster Party DJ",
+    "category": "Entertainment",
+    "base_fee": 550,
+    "per_person_rate": 0,
+    "min_capacity": 15,
+    "max_capacity": 250,
+    "rating": 4.4,
+    "reviews": 84,
+    "tier": "Budget",
+    "types": [
+      "Birthday",
+      "Other"
+    ]
+  },
+  {
+    "id": "ENT-005",
+    "name": "Festival Headliner Acts Agency",
+    "category": "Entertainment",
+    "base_fee": 6000,
+    "per_person_rate": 1,
+    "min_capacity": 200,
+    "max_capacity": 5000,
+    "rating": 4.9,
+    "reviews": 60,
+    "tier": "Luxury",
+    "types": [
+      "Festival",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "ENT-006",
+    "name": "Keynote Speaker & Host Network",
+    "category": "Entertainment",
+    "base_fee": 2200,
+    "per_person_rate": 0,
+    "min_capacity": 40,
+    "max_capacity": 1500,
+    "rating": 4.8,
+    "reviews": 75,
+    "tier": "Premium",
+    "types": [
+      "Conference",
+      "Corporate"
+    ]
+  },
+  {
+    "id": "STA-001",
+    "name": "Elite Shield Event Security & Safety",
+    "category": "Staffing",
+    "base_fee": 600,
+    "per_person_rate": 3.5,
+    "min_capacity": 50,
+    "max_capacity": 3000,
+    "rating": 4.8,
+    "reviews": 115,
+    "tier": "Premium",
+    "types": [
+      "Festival",
+      "Corporate",
+      "Conference",
+      "Wedding"
+    ]
+  },
+  {
+    "id": "STA-002",
+    "name": "Silver Hospitality Ushers & Servers",
+    "category": "Staffing",
+    "base_fee": 500,
+    "per_person_rate": 5.0,
+    "min_capacity": 30,
+    "max_capacity": 600,
+    "rating": 4.7,
+    "reviews": 130,
+    "tier": "Moderate",
+    "types": [
+      "Wedding",
+      "Corporate",
+      "Conference"
+    ]
+  },
+  {
+    "id": "STA-003",
+    "name": "LeadCoordinator & Event Stewards",
+    "category": "Staffing",
+    "base_fee": 900,
+    "per_person_rate": 4.0,
+    "min_capacity": 40,
+    "max_capacity": 800,
+    "rating": 4.9,
+    "reviews": 92,
+    "tier": "Luxury",
+    "types": [
+      "Wedding",
+      "Corporate",
+      "Conference"
+    ]
+  },
+  {
+    "id": "STA-004",
+    "name": "Basic Guard & Entry Crew",
+    "category": "Staffing",
+    "base_fee": 300,
+    "per_person_rate": 2.0,
+    "min_capacity": 20,
+    "max_capacity": 400,
+    "rating": 4.3,
+    "reviews": 70,
+    "tier": "Budget",
+    "types": [
+      "Birthday",
+      "Other",
+      "Festival"
+    ]
+  }
+]

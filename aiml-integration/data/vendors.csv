@@ -1,0 +1,46 @@
+id,name,category,base_fee,per_person_rate,min_capacity,max_capacity,rating,reviews,tier,types,reliability_score
+VEN-001,Grand Crystal Ballroom,Venue,3500,15.0,80,500,4.8,142,Premium,"['Wedding', 'Corporate', 'Conference']",0.885
+VEN-002,Sunset Botanical Gardens,Venue,2800,10.0,50,300,4.9,195,Premium,"['Wedding', 'Birthday', 'Corporate']",0.978
+VEN-003,Urban Skyline Rooftop,Venue,2200,12.0,40,200,4.7,118,Moderate,"['Birthday', 'Corporate', 'Other']",0.835
+VEN-004,TechHub Innovation Expo Hall,Venue,5000,20.0,150,1500,4.8,88,Luxury,"['Corporate', 'Conference', 'Festival']",0.804
+VEN-005,Rustic Pine Barn & Estate,Venue,1800,8.0,30,220,4.6,94,Moderate,"['Wedding', 'Birthday', 'Other']",0.785
+VEN-006,Community Arts Center & Hall,Venue,800,4.0,20,180,4.3,65,Budget,"['Birthday', 'Other', 'Corporate']",0.7
+VEN-007,Riverside Open Amphitheater,Venue,6500,18.0,200,3000,4.7,76,Luxury,"['Festival', 'Corporate', 'Conference']",0.772
+VEN-008,Heritage Manor House,Venue,4200,14.0,50,250,4.9,160,Luxury,"['Wedding', 'Corporate']",0.926
+VEN-009,Cozy Loft & Studio 42,Venue,600,5.0,15,80,4.4,52,Budget,"['Birthday', 'Other']",0.694
+VEN-010,Metropolitan Convention Center,Venue,7500,22.0,250,2500,4.8,110,Luxury,"['Conference', 'Corporate', 'Festival']",0.837
+CAT-001,Epicurean Plated Fine Dining,Catering,1200,65.0,40,400,4.9,210,Luxury,"['Wedding', 'Corporate']",0.986
+CAT-002,Golden Spoon Gourmet Buffet,Catering,800,42.0,30,600,4.8,178,Premium,"['Wedding', 'Corporate', 'Conference']",0.939
+CAT-003,Fiesta & Fork Casual Feast,Catering,500,26.0,25,350,4.6,134,Moderate,"['Birthday', 'Festival', 'Other']",0.845
+CAT-004,Artisan Street Food Collective,Catering,600,22.0,50,1500,4.7,155,Moderate,"['Festival', 'Birthday', 'Corporate', 'Other']",0.891
+CAT-005,Savory Bites Budget Catering,Catering,300,16.0,20,250,4.3,82,Budget,"['Birthday', 'Other', 'Corporate']",0.725
+CAT-006,Crown & Crest Royal Banquet,Catering,1800,85.0,50,350,4.9,140,Luxury,"['Wedding', 'Corporate']",0.896
+CAT-007,Corporate Express Deli & Hot Bar,Catering,400,28.0,30,800,4.5,98,Moderate,"['Corporate', 'Conference']",0.777
+CAT-008,Taste of Fusion Global Table,Catering,900,48.0,40,500,4.8,164,Premium,"['Wedding', 'Corporate', 'Birthday']",0.918
+PHO-001,Lumiere Cinematic Studios (Photo+Video),Photography,3200,2.0,20,1000,4.9,185,Luxury,"['Wedding', 'Corporate', 'Conference']",0.964
+PHO-002,TrueMotion Event Photography,Photography,1800,1.0,15,800,4.8,142,Premium,"['Wedding', 'Corporate', 'Birthday']",0.885
+PHO-003,Vivid Memories Photography,Photography,1100,0.5,10,500,4.6,95,Moderate,"['Birthday', 'Corporate', 'Other']",0.786
+PHO-004,SnapCraft Express Photography,Photography,600,0.0,10,300,4.3,68,Budget,"['Birthday', 'Other']",0.704
+PHO-005,Prestige Media & Drone Coverage,Photography,2600,1.5,30,2000,4.9,112,Luxury,"['Wedding', 'Festival', 'Conference']",0.854
+PHO-006,Moments In Time Portraiture,Photography,1400,1.0,15,400,4.7,88,Moderate,"['Wedding', 'Birthday', 'Corporate']",0.79
+DEC-001,Opulent Petals & Crystal Decor,Decor,2800,6.0,30,500,4.9,160,Luxury,"['Wedding', 'Corporate']",0.926
+DEC-002,Modern Elegance Event Stylists,Decor,1600,4.0,20,400,4.7,125,Premium,"['Wedding', 'Birthday', 'Corporate']",0.846
+DEC-003,Boho Bliss & Rustic Flora,Decor,1100,3.0,20,300,4.6,90,Moderate,"['Wedding', 'Birthday', 'Other']",0.779
+DEC-004,Balloon Pop & Party Themes,Decor,450,1.5,10,200,4.4,85,Budget,"['Birthday', 'Other']",0.744
+DEC-005,Corporate Brand Stage & Booth Scenics,Decor,2400,3.5,50,1500,4.8,75,Premium,"['Corporate', 'Conference', 'Festival']",0.784
+DEC-006,Minimalist Chic Tablescapes,Decor,850,2.5,15,250,4.5,60,Moderate,"['Birthday', 'Corporate', 'Wedding']",0.72
+AV-001,Apex Stage Pro AV & Concert Lighting,AudioVisual,3800,2.0,80,2500,4.9,105,Luxury,"['Festival', 'Conference', 'Corporate']",0.844
+AV-002,Pulse Tech Sound & Stage Lighting,AudioVisual,2000,1.5,40,800,4.8,130,Premium,"['Corporate', 'Conference', 'Wedding', 'Festival']",0.867
+AV-003,Harmonic Sound & Ambience Lighting,AudioVisual,1200,1.0,25,400,4.7,95,Moderate,"['Wedding', 'Birthday', 'Corporate']",0.8
+AV-004,ClearTone PA & Mic Rental,AudioVisual,450,0.5,15,200,4.3,72,Budget,"['Birthday', 'Other', 'Corporate']",0.71
+AV-005,OmniStream Conference Hybrid Tech,AudioVisual,2800,2.5,50,1200,4.9,88,Luxury,"['Conference', 'Corporate']",0.818
+ENT-001,The Royal Velvet 8-Piece Big Band,Entertainment,3500,0.0,50,1000,4.9,150,Luxury,"['Wedding', 'Corporate', 'Festival']",0.911
+ENT-002,DJ Nexus & Laser Show,Entertainment,1600,0.0,30,800,4.8,165,Premium,"['Wedding', 'Birthday', 'Festival', 'Corporate']",0.919
+ENT-003,GrooveLine Acoustic Duo & Trio,Entertainment,950,0.0,20,350,4.7,110,Moderate,"['Wedding', 'Birthday', 'Corporate']",0.823
+ENT-004,SpinMaster Party DJ,Entertainment,550,0.0,15,250,4.4,84,Budget,"['Birthday', 'Other']",0.742
+ENT-005,Festival Headliner Acts Agency,Entertainment,6000,1.0,200,5000,4.9,60,Luxury,"['Festival', 'Corporate']",0.776
+ENT-006,Keynote Speaker & Host Network,Entertainment,2200,0.0,40,1500,4.8,75,Premium,"['Conference', 'Corporate']",0.784
+STA-001,Elite Shield Event Security & Safety,Staffing,600,3.5,50,3000,4.8,115,Premium,"['Festival', 'Corporate', 'Conference', 'Wedding']",0.844
+STA-002,Silver Hospitality Ushers & Servers,Staffing,500,5.0,30,600,4.7,130,Moderate,"['Wedding', 'Corporate', 'Conference']",0.853
+STA-003,LeadCoordinator & Event Stewards,Staffing,900,4.0,40,800,4.9,92,Luxury,"['Wedding', 'Corporate', 'Conference']",0.824
+STA-004,Basic Guard & Entry Crew,Staffing,300,2.0,20,400,4.3,70,Budget,"['Birthday', 'Other', 'Festival']",0.707

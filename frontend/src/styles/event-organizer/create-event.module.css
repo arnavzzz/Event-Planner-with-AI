@@ -49,10 +49,403 @@
     background: var(--dashboard-surface, #fff);
 }
 
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--dashboard-muted, #9aafa5);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stepNumber {
+    display: grid;
+    width: 1.65rem;
+    height: 1.65rem;
+    place-items: center;
+    border: 1px solid var(--dashboard-border, #294136);
+    border-radius: 50%;
+    background: var(--dashboard-surface, #11231d);
+    font-size: 0.78rem;
+}
+
+.currentStep {
+    color: var(--dashboard-accent-strong, #75ddaf);
+}
+
+.completedStep {
+    color: var(--dashboard-accent-strong, #75ddaf);
+}
+
+.pendingStep {
+    opacity: 0.72;
+}
+
+.currentStep .stepNumber,
+.completedStep .stepNumber {
+    border-color: var(--dashboard-accent, #43c792);
+    background: var(--dashboard-active, rgba(67, 199, 146, 0.14));
+    color: var(--dashboard-accent-strong, #75ddaf);
+}
+
+.containerLight .currentStep {
+    color: var(--dashboard-accent-strong, #0b714d);
+}
+
+.containerLight .completedStep {
+    color: var(--dashboard-accent-strong, #0b714d);
+}
+
+.containerLight .currentStep .stepNumber,
+.containerLight .completedStep .stepNumber {
+    color: var(--dashboard-accent-strong, #0b714d);
+}
+
 .fields {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.35rem 1.5rem;
+}
+
+.eventSnapshot {
+    display: grid;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--dashboard-border, #294136);
+    border-radius: 0.65rem;
+    background: var(--dashboard-input, #0c1b16);
+}
+
+.eventSnapshot > span {
+    color: var(--dashboard-accent-strong, #75ddaf);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.containerLight .eventSnapshot > span {
+    color: var(--dashboard-accent-strong, #0b714d);
+}
+
+.eventSnapshot > strong {
+    font-size: 1rem;
+}
+
+.eventSnapshot small {
+    color: var(--dashboard-muted, #9aafa5);
+    font-size: 0.82rem;
+}
+
+.containerLight .eventSnapshot small {
+    color: var(--dashboard-muted, #718078);
+}
+
+.vendorHeading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.vendorHeading h2,
+.reviewTitle {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.vendorHeading p {
+    margin: 0.4rem 0 0;
+    color: var(--dashboard-muted, #9aafa5);
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.containerLight .vendorHeading p {
+    color: var(--dashboard-muted, #718078);
+}
+
+.selectionCount {
+    flex: 0 0 auto;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    background: var(--dashboard-active, rgba(67, 199, 146, 0.14));
+    color: var(--dashboard-accent-strong, #75ddaf);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.containerLight .selectionCount {
+    color: var(--dashboard-accent-strong, #0b714d);
+}
+
+.priceSummary,
+.reviewPriceSummary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+}
+
+.priceStat,
+.reviewPriceSummary > span {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--dashboard-border, #294136);
+    border-radius: 0.65rem;
+    background: var(--dashboard-input, #0c1b16);
+}
+
+.priceStat > span,
+.reviewPriceSummary > span {
+    color: var(--dashboard-muted, #9aafa5);
+    font-size: 0.75rem;
+}
+
+.priceStat strong,
+.reviewPriceSummary strong {
+    color: var(--dashboard-text, #f2f7f4);
+    font-size: 0.95rem;
+}
+
+.containerLight .priceStat strong,
+.containerLight .reviewPriceSummary strong {
+    color: var(--dashboard-text, #172820);
+}
+
+.savingsValue {
+    color: var(--dashboard-accent-strong, #75ddaf) !important;
+}
+
+.overPriceValue {
+    color: #e9a276 !important;
+}
+
+.vendorList {
+    display: grid;
+    max-height: 36rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.2rem 0.35rem 0.2rem 0.2rem;
+    scrollbar-color: var(--dashboard-accent, #43c792) var(--dashboard-input, #0c1b16);
+    scrollbar-width: thin;
+}
+
+.vendorCard {
+    display: flex;
+    min-width: 0;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--dashboard-border, #294136);
+    border-radius: 0.7rem;
+    background: var(--dashboard-input, #0c1b16);
+    cursor: pointer;
+    transition: border-color 140ms ease, background-color 140ms ease;
+}
+
+.vendorCard:hover,
+.selectedVendor {
+    border-color: var(--dashboard-accent, #43c792);
+    background: var(--dashboard-active, rgba(67, 199, 146, 0.14));
+}
+
+.vendorCard > input[type="checkbox"] {
+    flex: 0 0 auto;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.2rem 0 0;
+    accent-color: var(--dashboard-accent, #43c792);
+}
+
+.vendorInfo {
+    display: grid;
+    min-width: 0;
+    gap: 0.25rem;
+}
+
+.offerField {
+    display: grid;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+    color: var(--dashboard-text, #f2f7f4);
+    font-size: 0.78rem;
+    font-weight: 650;
+}
+
+.containerLight .offerField {
+    color: var(--dashboard-text, #172820);
+}
+
+.offerInputWrap {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 2.4rem;
+    padding: 0 0.65rem;
+    border: 1px solid var(--dashboard-border, #294136);
+    border-radius: 0.5rem;
+    background: var(--dashboard-surface, #11231d);
+    color: var(--dashboard-muted, #9aafa5);
+}
+
+.containerLight .offerInputWrap {
+    border-color: var(--dashboard-border, #dce6e0);
+    background: var(--dashboard-input, #f8faf9);
+    color: var(--dashboard-muted, #718078);
+}
+
+.offerInputWrap input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--dashboard-text, #f2f7f4);
+    font: inherit;
+    font-size: 0.88rem;
+}
+
+.containerLight .offerInputWrap input {
+    color: var(--dashboard-text, #172820);
+}
+
+.vendorInfo strong {
+    font-size: 0.94rem;
+}
+
+.vendorCategory {
+    color: var(--dashboard-accent-strong, #75ddaf);
+    font-size: 0.77rem;
+    font-weight: 700;
+}
+
+.containerLight .vendorCategory {
+    color: var(--dashboard-accent-strong, #0b714d);
+}
+
+.vendorService {
+    color: var(--dashboard-muted, #9aafa5);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.containerLight .vendorService {
+    color: var(--dashboard-muted, #718078);
+}
+
+.formError {
+    margin: 1rem 0 0;
+    color: #dc6c64;
+    font-size: 0.86rem;
+}
+
+.reviewTitle {
+    margin-bottom: 1rem;
+}
+
+.reviewDetails {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem 0 1.25rem;
+    border-bottom: 1px solid var(--dashboard-border, #294136);
+}
+
+.reviewDetails div {
+    display: grid;
+    gap: 0.3rem;
+}
+
+.reviewDetails dt {
+    color: var(--dashboard-muted, #9aafa5);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.containerLight .reviewDetails dt {
+    color: var(--dashboard-muted, #718078);
+}
+
+.reviewDetails dd {
+    margin: 0;
+    font-size: 0.93rem;
+    font-weight: 600;
+}
+
+.reviewVendorsTitle {
+    margin: 1.25rem 0 0.65rem;
+    font-size: 1rem;
+}
+
+.reviewVendors {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.reviewVendors li {
+    display: grid;
+    gap: 0.2rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--dashboard-border, #294136);
+    border-radius: 0.55rem;
+    background: var(--dashboard-input, #0c1b16);
+}
+
+.reviewVendors li strong {
+    font-size: 0.88rem;
+}
+
+.reviewVendors li span,
+.approvalNote {
+    color: var(--dashboard-muted, #9aafa5);
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.reviewVendorPrices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    margin-top: 0.35rem;
+}
+
+.reviewVendorPrices span {
+    color: var(--dashboard-accent-strong, #75ddaf) !important;
+    font-weight: 650;
+}
+
+.containerLight .reviewVendorPrices span {
+    color: var(--dashboard-accent-strong, #0b714d) !important;
+}
+
+.containerLight .reviewVendors li span,
+.containerLight .approvalNote {
+    color: var(--dashboard-muted, #718078);
+}
+
+.approvalNote {
+    margin: 1rem 0 0;
 }
 
 .field {
@@ -61,6 +454,60 @@
     color: var(--dashboard-text, #f2f7f4);
     font-size: 0.9rem;
     font-weight: 600;
+}
+
+.field > label {
+    cursor: pointer;
+}
+
+.dateInputWrap {
+    position: relative;
+    display: flex;
+    min-width: 0;
+}
+
+.dateInputWrap input {
+    padding-right: 3rem;
+}
+
+.datePickerButton {
+    position: absolute;
+    top: 50%;
+    right: 0.4rem;
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 0.4rem;
+    background: transparent;
+    color: var(--dashboard-accent-strong, #75ddaf);
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.containerLight .datePickerButton {
+    color: var(--dashboard-accent-strong, #0b714d);
+}
+
+.datePickerButton:hover {
+    background: var(--dashboard-active, rgba(67, 199, 146, 0.14));
+}
+
+.datePickerButton:focus-visible {
+    outline: 2px solid var(--dashboard-accent, #43c792);
+    outline-offset: 1px;
+}
+
+.datePickerButton svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
 }
 
 .containerLight .field {
@@ -105,6 +552,7 @@
 .actions {
     display: flex;
     justify-content: flex-end;
+    gap: 0.75rem;
     margin-top: 1.75rem;
 }
 
@@ -135,6 +583,29 @@
     outline-offset: 3px;
 }
 
+.secondaryButton {
+    min-height: 2.85rem;
+    padding: 0.7rem 1.1rem;
+    border: 1px solid var(--dashboard-border, #294136);
+    border-radius: 0.6rem;
+    background: var(--dashboard-input, #0c1b16);
+    color: var(--dashboard-text, #f2f7f4);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondaryButton:hover {
+    border-color: var(--dashboard-accent, #43c792);
+    background: var(--dashboard-active, rgba(67, 199, 146, 0.14));
+}
+
+.secondaryButton:focus-visible {
+    outline: 2px solid var(--dashboard-accent, #43c792);
+    outline-offset: 3px;
+}
+
 @media (max-width: 640px) {
     .container,
     .containerLight {
@@ -146,8 +617,553 @@
         gap: 1rem;
     }
 
+    .vendorList {
+        max-height: 18rem;
+        grid-template-columns: 1fr;
+    }
+
+    .reviewDetails {
+        grid-template-columns: 1fr;
+    }
+
+    .priceSummary,
+    .reviewPriceSummary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .actions {
+        flex-direction: column-reverse;
+    }
+
     .actions,
-    .submitButton {
+    .submitButton,
+    .secondaryButton {
         width: 100%;
     }
+}
+
+.aiBanner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1.4rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--dashboard-accent, #43c792);
+    background: linear-gradient(135deg, rgba(67, 199, 146, 0.08) 0%, rgba(11, 25, 21, 0.95) 100%);
+}
+
+.containerLight .aiBanner {
+    background: linear-gradient(135deg, rgba(67, 199, 146, 0.12) 0%, rgba(245, 250, 247, 0.95) 100%);
+    border-color: #0b714d;
+}
+
+.aiHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.aiHeaderTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--dashboard-text, #f2f7f4);
+}
+
+.containerLight .aiHeaderTitle {
+    color: #12211c;
+}
+
+.aiButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 0.55rem;
+    border: 1px solid var(--dashboard-accent, #43c792);
+    background: var(--dashboard-accent, #43c792);
+    color: #061511;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 120ms ease, opacity 120ms ease;
+}
+
+.aiButton:hover:not(:disabled) {
+    transform: translateY(-1px);
+    opacity: 0.94;
+}
+
+.aiButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.aiBundles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .aiBundles {
+        grid-template-columns: 1fr;
+    }
+}
+
+.aiBundleCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.75rem 0.85rem;
+    border-radius: 0.55rem;
+    border: 1px solid var(--dashboard-border, #294136);
+    background: var(--dashboard-input, #0c1b16);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 140ms ease, background 140ms ease;
+}
+
+.containerLight .aiBundleCard {
+    background: #ffffff;
+    border-color: #d1ded8;
+}
+
+.aiBundleActive {
+    border-color: var(--dashboard-accent, #43c792) !important;
+    background: var(--dashboard-active, rgba(67, 199, 146, 0.16)) !important;
+}
+
+.aiBundleName {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--dashboard-text, #f2f7f4);
+}
+
+.containerLight .aiBundleName {
+    color: #0b714d;
+}
+
+.aiBundleCost {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--dashboard-accent-strong, #75ddaf);
+}
+
+.containerLight .aiBundleCost {
+    color: #0b714d;
+}
+
+.aiBundleMeta {
+    font-size: 0.74rem;
+    color: var(--dashboard-muted, #9aafa5);
+}
+
+.vendorCostTag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--dashboard-accent-strong, #75ddaf);
+    margin-top: 0.2rem;
+}
+
+.containerLight .vendorCostTag {
+    color: #0b714d;
+}
+
+/* Vendor Heading Actions & Negotiate All */
+.vendorHeadingActions {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.negotiateAllBtn {
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--dashboard-accent, #43c792);
+    background: linear-gradient(135deg, rgba(67, 199, 146, 0.18), rgba(20, 92, 60, 0.25));
+    color: var(--dashboard-accent-strong, #75ddaf);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 150ms ease;
+}
+
+.negotiateAllBtn:hover:not(:disabled) {
+    background: var(--dashboard-accent, #43c792);
+    color: #0c1b16;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(67, 199, 146, 0.3);
+}
+
+.negotiateAllBtn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.containerLight .negotiateAllBtn {
+    background: linear-gradient(135deg, rgba(11, 113, 77, 0.12), rgba(67, 199, 146, 0.2));
+    color: #0b714d;
+    border-color: #0b714d;
+}
+
+.containerLight .negotiateAllBtn:hover:not(:disabled) {
+    background: #0b714d;
+    color: #ffffff;
+}
+
+/* Vendor Offer Section & Inline Negotiate Button */
+.vendorOfferSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.offerControlsRow {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.6rem;
+}
+
+.offerControlsRow .offerField {
+    flex: 1;
+    margin-top: 0;
+}
+
+.negotiateButton {
+    padding: 0.55rem 0.85rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--dashboard-accent, #43c792);
+    background: rgba(67, 199, 146, 0.12);
+    color: var(--dashboard-accent-strong, #75ddaf);
+    font-size: 0.76rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 140ms ease;
+    height: 2.4rem;
+}
+
+.negotiateButton:hover:not(:disabled) {
+    background: var(--dashboard-accent, #43c792);
+    color: #0c1b16;
+}
+
+.negotiateButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.containerLight .negotiateButton {
+    background: rgba(11, 113, 77, 0.08);
+    color: #0b714d;
+    border-color: #0b714d;
+}
+
+.containerLight .negotiateButton:hover:not(:disabled) {
+    background: #0b714d;
+    color: #ffffff;
+}
+
+/* Negotiation Result Card */
+.negotiationCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.55rem;
+    border: 1px solid rgba(67, 199, 146, 0.35);
+    background: rgba(12, 27, 22, 0.7);
+}
+
+.containerLight .negotiationCard {
+    background: #f4faf7;
+    border-color: #badccf;
+}
+
+.negotiationHeader {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.negotiationSavingsBadge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(67, 199, 146, 0.2);
+    color: #75ddaf;
+    font-size: 0.73rem;
+    font-weight: 700;
+}
+
+.containerLight .negotiationSavingsBadge {
+    background: rgba(11, 113, 77, 0.15);
+    color: #0b714d;
+}
+
+.negotiationStatusBadge {
+    font-size: 0.72rem;
+    color: var(--dashboard-muted, #9aafa5);
+}
+
+.containerLight .negotiationStatusBadge {
+    color: #53645b;
+}
+
+.pitchToggleBtn {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: var(--dashboard-accent-strong, #75ddaf);
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+    transition: background 120ms ease;
+}
+
+.pitchToggleBtn:hover {
+    background: rgba(67, 199, 146, 0.12);
+}
+
+.containerLight .pitchToggleBtn {
+    color: #0b714d;
+}
+
+.pitchExpandedDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.45rem;
+    border-top: 1px dashed var(--dashboard-border, #294136);
+    font-size: 0.75rem;
+}
+
+.containerLight .pitchExpandedDetails {
+    border-top-color: #d1ded8;
+}
+
+.leveragePoints strong,
+.concessionHistory strong,
+.draftedPitch strong {
+    display: block;
+    color: var(--dashboard-text, #f2f7f4);
+    font-size: 0.74rem;
+    margin-bottom: 0.25rem;
+}
+
+.containerLight .leveragePoints strong,
+.containerLight .concessionHistory strong,
+.containerLight .draftedPitch strong {
+    color: #172820;
+}
+
+.leveragePoints ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--dashboard-muted, #9aafa5);
+}
+
+.containerLight .leveragePoints ul {
+    color: #53645b;
+}
+
+.roundsChips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.roundChip {
+    display: inline-block;
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.35rem;
+    background: var(--dashboard-input, #0c1b16);
+    border: 1px solid var(--dashboard-border, #294136);
+    color: var(--dashboard-text, #f2f7f4);
+    font-size: 0.7rem;
+    font-family: monospace;
+}
+
+.containerLight .roundChip {
+    background: #ffffff;
+    border-color: #d1ded8;
+    color: #172820;
+}
+
+.pitchText {
+    margin: 0;
+    padding: 0.6rem;
+    border-radius: 0.45rem;
+    background: var(--dashboard-surface, #11231d);
+    border: 1px solid var(--dashboard-border, #294136);
+    color: var(--dashboard-muted, #9aafa5);
+    font-family: monospace;
+    font-size: 0.71rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 8rem;
+    overflow-y: auto;
+}
+
+.containerLight .pitchText {
+    background: #ffffff;
+    border-color: #d1ded8;
+    color: #3b4d45;
+}
+
+.reviewNegotiationBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(67, 199, 146, 0.18);
+    color: var(--dashboard-accent-strong, #75ddaf);
+    font-size: 0.73rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+.containerLight .reviewNegotiationBadge {
+    background: rgba(11, 113, 77, 0.12);
+    color: #0b714d;
+}
+
+/* Insufficient Budget Alert & Over-Budget Banners */
+.insufficientBudgetAlert,
+.overBudgetAlertBanner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 0.95rem 1.15rem;
+    border-radius: 0.65rem;
+    margin: 0.85rem 0;
+    border: 1px solid rgba(239, 68, 68, 0.45);
+    background: rgba(239, 68, 68, 0.12);
+    color: #fca5a5;
+    animation: fadeInBudgetAlert 180ms ease;
+}
+
+@keyframes fadeInBudgetAlert {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.containerLight .insufficientBudgetAlert,
+.containerLight .overBudgetAlertBanner {
+    background: #fef2f2;
+    border-color: #f87171;
+    color: #991b1b;
+}
+
+.insufficientBudgetAlertHeader,
+.overBudgetAlertBanner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.alertIcon,
+.overBudgetIcon {
+    font-size: 1.35rem;
+    line-height: 1.1;
+    flex-shrink: 0;
+}
+
+.overBudgetText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
+
+.overBudgetText strong {
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: #f87171;
+}
+
+.containerLight .overBudgetText strong {
+    color: #b91c1c;
+}
+
+.overBudgetText p {
+    margin: 0;
+    font-size: 0.83rem;
+    line-height: 1.45;
+    color: #fca5a5;
+}
+
+.containerLight .overBudgetText p {
+    color: #7f1d1d;
+}
+
+.deficitAmount {
+    font-weight: 700;
+    color: #ef4444;
+    text-decoration: underline;
+}
+
+.containerLight .deficitAmount {
+    color: #dc2626;
+}
+
+.alertTips {
+    font-size: 0.79rem;
+    margin-top: 0.35rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed rgba(239, 68, 68, 0.3);
+    color: var(--dashboard-muted, #9aafa5);
+}
+
+.containerLight .alertTips {
+    border-top-color: #fca5a5;
+    color: #718078;
+}
+
+.alertTips span {
+    font-weight: 700;
+    color: var(--dashboard-text, #f2f7f4);
+}
+
+.containerLight .alertTips span {
+    color: #172820;
+}
+
+.alertTips ul {
+    margin: 0.35rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.alertTips li {
+    margin-bottom: 0.25rem;
+}
+
+.disabledOverBudgetBtn {
+    opacity: 0.45 !important;
+    cursor: not-allowed !important;
+    filter: grayscale(0.8);
+}
+
+.disabledOverBudgetBtn:hover {
+    transform: none !important;
+    box-shadow: none !important;
 }

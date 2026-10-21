@@ -1,6 +1,7 @@
 import {useState} from "react";
 import styles from "../../../../styles/event-organizer/events.module.css"
 import type {EventRecord} from "../EventData.ts";
+import {formatInr} from "../currency.ts";
 
 interface EventsProps {
     isDark: boolean;
@@ -98,13 +99,35 @@ export default function Events({isDark, events}:EventsProps) {
                                         </div>
                                         <div>
                                             <dt>Client Budget</dt>
-                                            <dd>{new Intl.NumberFormat().format(event.clientBudget)}</dd>
+                                            <dd>{formatInr(event.clientBudget)}</dd>
                                         </div>
                                         <div>
                                             <dt>Guests</dt>
                                             <dd>{new Intl.NumberFormat().format(event.guestCount)}</dd>
                                         </div>
                                     </dl>
+                                    <section className={styles.eventVendors} aria-label={`Vendors for ${event.eventName}`}>
+                                        <h3>Vendors</h3>
+                                        {event.vendors && event.vendors.length > 0 ? (
+                                            <ul className={styles.vendorList}>
+                                                {event.vendors.map((vendor) => (
+                                                    <li className={styles.vendorItem} key={vendor.id}>
+                                                        <strong>{vendor.name}</strong>
+                                                        <span>{vendor.category} · {vendor.service}</span>
+                                                        {(vendor.estimatedCost !== undefined || vendor.negotiatedCost !== undefined) && (
+                                                            <span>
+                                                                {vendor.estimatedCost !== undefined && `Estimate ${formatInr(vendor.estimatedCost)}`}
+                                                                {vendor.estimatedCost !== undefined && vendor.negotiatedCost !== undefined && " · "}
+                                                                {vendor.negotiatedCost !== undefined && `Agreed ${formatInr(vendor.negotiatedCost)}`}
+                                                            </span>
+                                                        )}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        ) : (
+                                            <p className={styles.noVendors}>No vendors selected for this event.</p>
+                                        )}
+                                    </section>
                                 </article>
                             ))}
                         </div>
