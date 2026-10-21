@@ -1,0 +1,46 @@
+# ==============================================================================
+# Netlify Configuration - Event Planner with AI
+# ==============================================================================
+
+[build]
+  # Base directory where frontend source code lives
+  base = "frontend"
+
+  # Directory to publish after build (relative to base)
+  publish = "dist"
+
+  # Build command to execute
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Optional reverse-proxy for API if backend is deployed externally
+# Uncomment and update the destination URL when your FastAPI backend is hosted:
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://your-event-planner-backend.onrender.com/api/:splat"
+#   status = 200
+#   force = true
+
+# Single Page Application (SPA) redirect rule
+# Ensures client-side routing works for all page paths (e.g. /login, /dashboard)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security and cache-control HTTP headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

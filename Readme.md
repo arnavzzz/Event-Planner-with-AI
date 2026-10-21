@@ -7,6 +7,7 @@
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=white)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Netlify Status](https://img.shields.io/badge/Netlify-Deployed-00C7B7?logo=netlify&logoColor=white)](https://www.netlify.com/)
 
 An intelligent, full-stack **Event Management & Operations Platform** powered by Machine Learning and AI. Designed to streamline every phase of event execution—from AI-driven budget distribution, intelligent vendor matchmaking, and automated price negotiation, to live control room execution and post-event analytics.
 
@@ -23,6 +24,7 @@ An intelligent, full-stack **Event Management & Operations Platform** powered by
 * **Budget Sufficiency & Deficit Diagnostics**: Evaluates minimum required budget thresholds for guest counts, alerting organizers with exact deficit values if budgets are insufficient.
 * **Automated AI Price Negotiation**: Alternating-offer bargaining engine allowing organizers to negotiate pricing with individual vendors or full bundles. Leverages concession toggles (flexible dates, early deposits) to calculate counteroffers, project savings, and draft negotiation pitches.
 * **Autonomous AI Agents & Health Scores**: Live diagnostics, risk scoring, and automated contingency alerts.
+* **Zero-Setup Netlify Offline Simulation**: If deployed to Netlify without a running backend server, the client seamlessly falls back to a high-fidelity browser AI simulation so all packages, sliders, and negotiations work immediately.
 
 ### 💼 Multi-Role Dashboards
 * **Event Organizer Dashboard**:
@@ -59,6 +61,7 @@ Test the application instantly using pre-configured demo accounts:
 | **Frontend** | React 19.2, TypeScript 6.0, Vite 8.3, CSS Modules, Lucide React Icons |
 | **Backend API** | FastAPI 0.115+, Uvicorn (ASGI), Pydantic v2, CORS Middleware |
 | **AI / Machine Learning** | Scikit-Learn 1.5+, Pandas, NumPy, Joblib, SciPy, Jupyter Notebook |
+| **Deployment & Hosting** | Netlify (Pre-configured via `netlify.toml` and `_redirects`), Vite Proxy |
 | **Tooling & Quality** | Oxlint, Python virtual environments (`.venv`), PowerShell / Batch scripts |
 
 ---
@@ -67,6 +70,13 @@ Test the application instantly using pre-configured demo accounts:
 
 ```text
 event_planner/
+├── netlify.toml                    # Netlify production deployment configuration (root)
+├── package.json                    # Root build orchestration script for Netlify CI/CD
+├── start_services.bat              # One-click Windows Batch startup script
+├── start_services.ps1              # One-click PowerShell startup script
+├── LICENSE.txt                     # MIT License
+├── Readme.md                       # Main project documentation
+│
 ├── aiml-integration/               # Machine Learning & AI Recommendation Service
 │   ├── data/                       # Vendor catalog (CSV & JSON databases)
 │   ├── models/                     # Trained ML pipelines (.joblib artifacts)
@@ -84,34 +94,66 @@ event_planner/
 │   ├── test_api.py                 # Automated API test suite
 │   └── test_main.http              # HTTP request inspection file
 │
-├── frontend/                       # Vite + React 19 + TypeScript Application
-│   ├── public/                     # Static assets and favicons
-│   ├── src/
-│   │   ├── api/                    # Typed API client services (FastAPI connector)
-│   │   │   └── aiService.ts
-│   │   ├── auth/                   # Authentication logic & credentials
-│   │   ├── parts/
-│   │   │   ├── LoginPage.tsx       # Auth login interface & role routing
-│   │   │   └── dashboard/          # Multi-role dashboard views
-│   │   │       ├── EventOrganizer/ # 20+ feature pages (CreateEvent, Events, Control Room, etc.)
-│   │   │       │   ├── currency.ts # Global multi-currency formatting & conversion
-│   │   │       │   └── pages/
-│   │   │       └── Vendor/         # Vendor portal & logistics modules
-│   │   ├── styles/                 # Scoped CSS modules & theme styles
-│   │   ├── App.tsx                 # Root application component
-│   │   └── main.tsx                # Entry point
-│   ├── package.json                # Frontend dependencies and scripts
-│   └── vite.config.ts              # Vite configuration
-│
-├── start_services.bat              # One-click Windows Batch startup script
-├── start_services.ps1              # One-click PowerShell startup script
-├── LICENSE.txt                     # MIT License
-└── Readme.md                       # Main project documentation
+└── frontend/                       # Vite + React 19 + TypeScript Application
+    ├── netlify.toml                # Netlify config for subdirectory base setup
+    ├── .env.example                # Example environment variables (VITE_API_URL)
+    ├── package.json                # Frontend dependencies and scripts
+    ├── vite.config.ts              # Vite configuration (includes /api dev proxy)
+    ├── public/
+    │   ├── _redirects              # Netlify SPA client-side routing fallback
+    │   └── favicon/                # Application logos and favicons
+    └── src/
+        ├── api/
+        │   └── aiService.ts        # Typed API client + resilient offline AI fallback
+        ├── auth/                   # Authentication logic & credentials
+        ├── parts/
+        │   ├── LoginPage.tsx       # Auth login interface & role routing
+        │   └── dashboard/          # Multi-role dashboard views
+        │       ├── EventOrganizer/ # 20+ feature pages (CreateEvent, Events, Control Room, etc.)
+        │       │   ├── currency.ts # Global multi-currency formatting & conversion
+        │       │   └── pages/
+        │       └── Vendor/         # Vendor portal & logistics modules
+        ├── styles/                 # Scoped CSS modules & theme styles
+        ├── App.tsx                 # Root application component
+        └── main.tsx                # Application entry point
 ```
 
 ---
 
-## ⚡ Quick Start
+## 🌐 Deploying to Netlify
+
+The repository is fully configured for deployment on **[Netlify](https://www.netlify.com/)**.
+
+### Step 1: Connect Your Repository to Netlify
+1. Log in to your [Netlify Dashboard](https://app.netlify.com/).
+2. Click **"Add new site"** &rarr; **"Import an existing project"**.
+3. Choose **GitHub** and select your repository (`arnavzzz/Event-Planner-with-AI`).
+
+### Step 2: Build & Directory Settings
+Netlify will automatically detect the settings from [`netlify.toml`](netlify.toml):
+* **Base directory**: `frontend`
+* **Build command**: `npm run build`
+* **Publish directory**: `frontend/dist` (or `dist` if base is set to `frontend`)
+
+*(If prompted manually, you can also leave the Base directory empty and let the root `package.json` run `npm run build`).*
+
+### Step 3: (Optional) Connect a Deployed FastAPI Backend
+* If you host your Python FastAPI backend (e.g., on [Render](https://render.com), [Railway](https://railway.app), [Fly.io](https://fly.io), or [Hugging Face Spaces](https://huggingface.co/spaces)):
+  1. Go to your Netlify site &rarr; **Site configuration** &rarr; **Environment variables**.
+  2. Add a new variable:
+     - **Key**: `VITE_API_URL`
+     - **Value**: `https://your-event-planner-backend.onrender.com` (your live backend URL).
+  3. Trigger a redeploy.
+
+> [!NOTE]
+> **Zero Backend Setup Required for UI Demos**: If `VITE_API_URL` is omitted, the frontend automatically activates an **intelligent client-side AI simulation mode** directly in the browser! All budget allocations, 3 package tiers, budget sufficiency warnings, and interactive AI price negotiations will function smoothly.
+
+### Step 4: Click "Deploy Site"
+Netlify will build the production bundle and assign a public `*.netlify.app` URL. Single-page navigation (`/login`, `/dashboard`, etc.) works seamlessly via [`_redirects`](frontend/public/_redirects).
+
+---
+
+## ⚡ Quick Start (Local Development)
 
 ### Option 1: One-Click Startup (Recommended for Windows)
 

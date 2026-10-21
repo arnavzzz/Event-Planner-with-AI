@@ -1,0 +1,21 @@
+{
+  "name": "event-planner-with-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Intelligent Full-Stack Event Management & Operations Platform powered by AI",
+  "scripts": {
+    "build": "npm --prefix frontend run build",
+    "dev": "npm --prefix frontend run dev",
+    "lint": "npm --prefix frontend run lint",
+    "preview": "npm --prefix frontend run preview"
+  },
+  "keywords": [
+    "event-planner",
+    "ai",
+    "react",
+    "fastapi",
+    "machine-learning"
+  ],
+  "author": "Arnav Agrawal",
+  "license": "MIT"
+}
