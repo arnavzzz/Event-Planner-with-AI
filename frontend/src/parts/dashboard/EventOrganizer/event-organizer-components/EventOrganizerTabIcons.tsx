@@ -41,6 +41,17 @@ export const EventsIcon = (props: IconProps) => (
     </Icon>
 );
 
+export const CreateEventIcon = (props: IconProps) => (
+    <Icon {...props}>
+        <rect x="3" y="4.5" width="18" height="16" rx="2" />
+        <line x1="8" y1="2.5" x2="8" y2="6.5" />
+        <line x1="16" y1="2.5" x2="16" y2="6.5" />
+        <line x1="3" y1="9.5" x2="21" y2="9.5" />
+        <line x1="12" y1="12" x2="12" y2="18" />
+        <line x1="9" y1="15" x2="15" y2="15" />
+    </Icon>
+);
+
 export const AIPlannerIcon = (props: IconProps) => (
     <Icon {...props}>
         <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z" />
@@ -210,6 +221,7 @@ export const SettingIcon = (props: IconProps) => (
 export const TAB_ICONS: Record<OrganTabId, React.FC<IconProps>> = {
     overview: OverviewIcon,
     events: EventsIcon,
+    "create-event": CreateEventIcon,
     "ai-planner": AIPlannerIcon,
     venues: VenuesIcon,
     vendors: VendorsIcon,

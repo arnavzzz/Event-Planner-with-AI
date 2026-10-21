@@ -7,7 +7,7 @@ interface LogOutButtonProps {
 
 function LogOutButton({isDark, onLogOut}: LogOutButtonProps) {
     return (
-        <div className={isDark ? styles.logOutButtonEventOrganizer : styles.logOutButtonEventOrganizer}>
+        <div className={isDark ? styles.logOutButtonEventOrganizer : styles.logOutButtonEventOrganizerDark}>
             <button
                 onClick={onLogOut}
                 aria-label="Log Out"

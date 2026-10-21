@@ -1,4 +1,4 @@
-export type OrganTabId = "overview" | "events" | "ai-planner"
+export type OrganTabId = "overview" | "events" | "create-event" | "ai-planner"
     | "venues" | "vendors" | "budget" | "schedule" |
     "staff" | "guest" | "catering" | "logistics" | "risk"
     | "live-control-room" | "tasks" | "communication-hub"
@@ -12,6 +12,7 @@ export type OrganTab = {
 export const TABS = [
     {id: "overview", label: "Overview"},
     {id: "events", label: "Events"},
+    {id: "create-event", label: "Create Event"},
     {id: "ai-planner", label: "AI Planner"},
     {id: "venues", label: "Venues"},
     {id: "vendors", label: "Vendors"},

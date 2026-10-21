@@ -19,13 +19,18 @@ import Documents from "./pages/Documents.tsx";
 import Reports from "./pages/Reports.tsx";
 import AiAgents from "./pages/AiAgents.tsx";
 import GlobalAiAgents from "./pages/GlobalAiAgents.tsx";
+import CreateEvent from "./pages/CreateEvent.tsx";
+import type {EventRecord} from "./EventData.ts";
+import type {OrganTabId} from "./EventOrganizerDashboardTabs.ts";
 
 interface EventOrganizerMainBodyProps {
     isDark: boolean;
-    activeTab: string;
+    activeTab: OrganTabId;
+    events: EventRecord[];
+    onCreateEvent: (event: EventRecord) => void;
 }
 
-function EventOrganizerMainBody({isDark, activeTab}: EventOrganizerMainBodyProps) {
+function EventOrganizerMainBody({isDark, activeTab, events, onCreateEvent}: EventOrganizerMainBodyProps) {
     return (
         <main className={isDark ? styles.mainBody : styles.mainBodyDark}>
 
@@ -33,7 +38,10 @@ function EventOrganizerMainBody({isDark, activeTab}: EventOrganizerMainBodyProps
                 <Overview isDark={isDark}/>
             )}
             {activeTab === "events" && (
-                <Events isDark={isDark} />
+                <Events isDark={isDark} events={events} />
+            )}
+            {activeTab === "create-event" && (
+                <CreateEvent isDark={isDark} onCreate={onCreateEvent} />
             )}
             {activeTab === "ai-planner"&& (
                 <AiPlanner isDark={isDark} />

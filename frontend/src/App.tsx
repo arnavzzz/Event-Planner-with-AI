@@ -5,7 +5,7 @@ import type {Role} from "./auth/credentials.ts"
 import React from "react";
 
 function App() {
-    const [isDark, setIsDark] = React.useState(false);
+    const [isDark, setIsDark] = React.useState(true);
     const onToggle = () => {
         setIsDark((prev) => !prev)
     }

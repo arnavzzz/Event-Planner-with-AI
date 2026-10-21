@@ -1,6 +1,7 @@
-import React from "react";
+import {useState} from "react";
 import {TABS, type OrganTabId} from "./EventOrganizerDashboardTabs.ts";
 import styles from "../../../styles/EventOrganizer.module.css"
+import type {EventRecord} from "./EventData.ts";
 import EventOrganizerNav from "./event-organizer-components/EventOrganizerNav.tsx";
 import EventOrganizerHeader from "./event-organizer-components/EventOrganizerHeader.tsx";
 import EventOrganizerFooter from "./event-organizer-components/EventOrganizerFooter.tsx";
@@ -14,9 +15,13 @@ interface EventOrganizerDashboardProps{
 }
 
 function EventOrganizerDashboard({isDark, onToggle, onLogOut}:EventOrganizerDashboardProps) {
-    const [activeTab, setActiveTab] = React.useState<OrganTabId>("overview")
-    const activeLabel = TABS.find(
-        (tab) => tab.id === activeTab)?.label ??"";
+    const [activeTab, setActiveTab] = useState<OrganTabId>("events");
+    const [events, setEvents] = useState<EventRecord[]>([]);
+
+    const handleCreateEvent = (event: EventRecord) => {
+        setEvents((currentEvents) => [event, ...currentEvents]);
+        setActiveTab("events");
+    };
 
     return(
         <div className={isDark? styles.container: styles.containerDark}>
@@ -26,18 +31,24 @@ function EventOrganizerDashboard({isDark, onToggle, onLogOut}:EventOrganizerDash
                 onLogOut={onLogOut}
             />
 
-            <EventOrganizerNav
-                isDark={isDark}
-                tabs={TABS}
-                activeTab={activeTab}
-                onTabChange={(id) => setActiveTab(id as OrganTabId)}
-            />
-
-            <EventOrganizerMainBody isDark={isDark} activeTab={activeTab} />
+            <div className={styles.dashboardBody}>
+                <EventOrganizerNav
+                    isDark={isDark}
+                    tabs={TABS.filter((tab) => tab.id === "events" || tab.id === "create-event")}
+                    activeTab={activeTab}
+                    onTabChange={setActiveTab}
+                />
+                <EventOrganizerMainBody
+                    isDark={isDark}
+                    activeTab={activeTab}
+                    events={events}
+                    onCreateEvent={handleCreateEvent}
+                />
+            </div>
 
             <EventOrganizerFooter
                 isDark={isDark}
-                activeLabel={activeLabel}
+                activeLabel={TABS.find((tab) => tab.id === activeTab)?.label ?? "Events"}
             />
 
         </div>

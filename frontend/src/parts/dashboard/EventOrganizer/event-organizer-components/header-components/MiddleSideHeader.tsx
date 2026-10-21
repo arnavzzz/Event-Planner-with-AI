@@ -8,7 +8,7 @@ function MiddleSideHeader ({isDark}:MiddleSideHeaderProps) {
     return(
         <div className={isDark? styles.middleHeader : styles.middleHeaderDark}>
             <div>
-                <input type="search"/>
+                    <input type="search" aria-label="Search events" placeholder="Search events..." />
             </div>
         </div>
     )
