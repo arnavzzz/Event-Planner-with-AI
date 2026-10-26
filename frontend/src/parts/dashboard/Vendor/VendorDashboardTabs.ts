@@ -1,1 +1,0 @@
-// type VendorTabId = "dashboard" | "event-requests" | "booking" | "requirements" | "quotations" | "contractors" | "schedule" | "team" | "inventory" | "logistics" | "pricing" | "event-execution" | "payments" | "documents" | "communication" | "emergency" | "performance" | "ai-assistant" | "vendor-profile"

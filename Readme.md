@@ -28,16 +28,13 @@ An intelligent, full-stack **Event Management & Operations Platform** powered by
 * **Autonomous AI Agents & Health Scores**: Live diagnostics, risk scoring, and automated contingency alerts.
 * **Zero-Setup Netlify Offline Simulation**: If deployed to Netlify without a running backend server, the client seamlessly falls back to a high-fidelity browser AI simulation so all packages, sliders, and negotiations work immediately.
 
-### 💼 Multi-Role Dashboards
+### 💼 Event Organizer Dashboard
 * **Event Organizer Dashboard**:
   * Unified overview with health scores, KPI metrics, and budget analytics.
   * Interactive **Create Event** wizard with live AI vendor recommendations, dynamic budget sliders, and price negotiation modals.
   * Comprehensive event operations: Venues, Catering, Budgets, Guests (RSVP & seating), Staff scheduling, and Risk Matrix.
   * **Live Control Room**: Real-time event day execution monitoring, live issue reporting, and minute-by-minute schedules.
   * **Global Currency Switcher**: Real-time conversion across USD ($), EUR (€), GBP (£), INR (₹), CAD ($), AUD ($), and JPY (¥).
-* **Vendor Dashboard**:
-  * Manage service listings, track incoming bookings, contracts, and logistics.
-
 ### 🎨 Modern UI / UX
 * Built with **React 19**, **TypeScript**, and modular **CSS Modules**.
 * **Dynamic Theme Switcher**: Seamless Dark Mode and Light Mode support across all pages.
@@ -56,7 +53,6 @@ Test the application instantly on the <a href="https://6ad8627cf0caf035378e6e6d-
 | Role | Email | Password | Access Scope |
 | :--- | :--- | :--- | :--- |
 | 👑 **Event Organizer** | `eo1@arnav.com` | `123456` | Full event creation, AI tools, live control room & analytics |
-| 🤝 **Vendor** | `ve1@arnav.com` | `654321` | Service offerings, bookings, contracts & logistics |
 
 ---
 
@@ -113,12 +109,11 @@ event_planner/
         │   └── aiService.ts        # Typed API client + resilient offline AI fallback
         ├── auth/                   # Authentication logic & credentials
         ├── parts/
-        │   ├── LoginPage.tsx       # Auth login interface & role routing
-        │   └── dashboard/          # Multi-role dashboard views
-        │       ├── EventOrganizer/ # 20+ feature pages (CreateEvent, Events, Control Room, etc.)
-        │       │   ├── currency.ts # Global multi-currency formatting & conversion
-        │       │   └── pages/
-        │       └── Vendor/         # Vendor portal & logistics modules
+        │   ├── LoginPage.tsx       # Authentication interface
+        │   └── dashboard/
+        │       └── EventOrganizer/ # Event planning and operations pages
+        │           ├── currency.ts # Global multi-currency formatting & conversion
+        │           └── pages/
         ├── styles/                 # Scoped CSS modules & theme styles
         ├── App.tsx                 # Root application component
         └── main.tsx                # Application entry point

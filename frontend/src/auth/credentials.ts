@@ -1,4 +1,4 @@
-export type Role = "event-organizer" | "vendor"
+export type Role = "event-organizer"
 
 export interface Account {
     email : string;
@@ -7,23 +7,12 @@ export interface Account {
     label: string;
 }
 
-export const ROLES: {role: Role; label: string} [] = [
-    {role: "event-organizer", label: "Event Organizer"},
-    {role: "vendor", label: "Vendor"},
-]
-
 export const DEMO_ACCOUNTS: Account[] = [
     {
         email: "eo1@arnav.com",
         password: "123456",
         role:"event-organizer",
         label: "Event Organizer",
-    },
-    {
-        email: "ve1@arnav.com",
-        password: "654321",
-        role: "vendor",
-        label: "Vendor",
     },
 ]
 

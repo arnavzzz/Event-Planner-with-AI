@@ -1,7 +1,5 @@
 import React, {Fragment} from "react";
 import type {SubmitEvent} from "react";
-import RoleSelection from "./RoleSelect.tsx";
-import type {Role} from "../../../auth/credentials.ts";
 import styles from "../../../styles/Login.module.css";
 
 type Mode = "login" | "signup";
@@ -9,7 +7,7 @@ type Mode = "login" | "signup";
 interface AuthFormProps{
     mode: Mode;
     onLogin: (email: string, password: string) => void;
-    onSignUp: (email: string, password: string, role:Role) => void;
+    onSignUp: (email: string, password: string) => void;
     isDark: boolean;
 }
 
@@ -17,7 +15,6 @@ function AuthForm({mode, onLogin, onSignUp, isDark}:AuthFormProps){
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [confirmPassword, setConfirmPassword] = React.useState("")
-    const [role, setRole] = React.useState<Role>("event-organizer")
     const [formError, setFormError] = React.useState<string|null>(null)
 
     const handleSubmit = (event: SubmitEvent<HTMLFormElement>)=> {
@@ -39,7 +36,7 @@ function AuthForm({mode, onLogin, onSignUp, isDark}:AuthFormProps){
                 setFormError("Passcodes do not match");
                 return;
             }
-            onSignUp(email, password, role);
+            onSignUp(email, password);
             return;
         }
         onLogin(email, password);
@@ -48,7 +45,6 @@ function AuthForm({mode, onLogin, onSignUp, isDark}:AuthFormProps){
     return (
         <div className={isDark?styles.formPart:styles.formPartDark}>
             <form onSubmit={handleSubmit} noValidate>
-                {mode === "signup" && <RoleSelection role={role} onChange={setRole} isDark={isDark} />}
                 <label>
                     <span>Email</span>
                     <input

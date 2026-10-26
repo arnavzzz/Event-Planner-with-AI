@@ -30,9 +30,9 @@ export default function LoginForm({isDark, onSuccess}:LoginFormProps){
         }
     }
 
-    const handleSignup = (_email:string, _password:string, role:Role) => {
+    const handleSignup = (_email:string, _password:string) => {
         setError(null)
-        onSuccess(role)
+        onSuccess("event-organizer")
     }
 
 
