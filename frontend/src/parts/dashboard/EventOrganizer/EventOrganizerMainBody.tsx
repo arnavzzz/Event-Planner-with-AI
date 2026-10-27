@@ -1,7 +1,7 @@
-import styles from "../../../styles/EventOrganizer.module.css"
+import styles from "../../../styles/EventOrganizer.module.css";
 import Overview from "./pages/Overview.tsx";
 import Events from "./pages/Events.tsx";
-import Setting from "./pages/Setting.tsx"
+import Profile from "./pages/Profile.tsx";
 import AiPlanner from "./pages/AiPlanner.tsx";
 import Venue from "./pages/Venue.tsx";
 import Vendor from "./pages/Vendor.tsx";
@@ -20,22 +20,42 @@ import Reports from "./pages/Reports.tsx";
 import AiAgents from "./pages/AiAgents.tsx";
 import GlobalAiAgents from "./pages/GlobalAiAgents.tsx";
 import CreateEvent from "./pages/CreateEvent.tsx";
-import type {EventRecord} from "./EventData.ts";
-import type {OrganTabId} from "./EventOrganizerDashboardTabs.ts";
+import type { EventRecord } from "./EventData.ts";
+import type { OrganTabId } from "./EventOrganizerDashboardTabs.ts";
+import type { UserProfile } from "../../../api/authService.ts";
 
 interface EventOrganizerMainBodyProps {
     isDark: boolean;
     activeTab: OrganTabId;
     events: EventRecord[];
+    user?: UserProfile | null;
     onCreateEvent: (event: EventRecord) => void;
+    onSelectTab?: (tab: OrganTabId) => void;
+    onLogOut?: () => void;
 }
 
-function EventOrganizerMainBody({isDark, activeTab, events, onCreateEvent}: EventOrganizerMainBodyProps) {
+function EventOrganizerMainBody({
+    isDark,
+    activeTab,
+    events,
+    user,
+    onCreateEvent,
+    onSelectTab,
+    onLogOut,
+}: EventOrganizerMainBodyProps) {
     return (
         <main className={isDark ? styles.mainBody : styles.mainBodyDark}>
-
             {activeTab === "overview" && (
-                <Overview isDark={isDark}/>
+                <Overview isDark={isDark} />
+            )}
+            {activeTab === "profile" && (
+                <Profile
+                    isDark={isDark}
+                    user={user}
+                    events={events}
+                    onLogOut={onLogOut || (() => {})}
+                    onSelectTab={onSelectTab || (() => {})}
+                />
             )}
             {activeTab === "events" && (
                 <Events isDark={isDark} events={events} />
@@ -43,7 +63,7 @@ function EventOrganizerMainBody({isDark, activeTab, events, onCreateEvent}: Even
             {activeTab === "create-event" && (
                 <CreateEvent isDark={isDark} onCreate={onCreateEvent} />
             )}
-            {activeTab === "ai-planner"&& (
+            {activeTab === "ai-planner" && (
                 <AiPlanner isDark={isDark} />
             )}
             {activeTab === "venues" && (
@@ -62,13 +82,13 @@ function EventOrganizerMainBody({isDark, activeTab, events, onCreateEvent}: Even
                 <Staff isDark={isDark} />
             )}
             {activeTab === "guest" && (
-                <Guest isDark={isDark}/>
+                <Guest isDark={isDark} />
             )}
             {activeTab === "catering" && (
                 <Catering isDark={isDark} />
             )}
             {activeTab === "logistics" && (
-                <Logistics isDark={isDark}/>
+                <Logistics isDark={isDark} />
             )}
             {activeTab === "risk" && (
                 <Risk isDark={isDark} />
@@ -83,7 +103,7 @@ function EventOrganizerMainBody({isDark, activeTab, events, onCreateEvent}: Even
                 <CommunicationHub isDark={isDark} />
             )}
             {activeTab === "documents" && (
-                <Documents isDark={isDark} />
+                <Documents isDark={isDark} events={events} onSelectTab={onSelectTab} />
             )}
             {activeTab === "reports" && (
                 <Reports isDark={isDark} />
@@ -95,10 +115,16 @@ function EventOrganizerMainBody({isDark, activeTab, events, onCreateEvent}: Even
                 <GlobalAiAgents isDark={isDark} />
             )}
             {activeTab === "setting" && (
-                <Setting isDark={isDark}/>
+                <Profile
+                    isDark={isDark}
+                    user={user}
+                    events={events}
+                    onLogOut={onLogOut || (() => {})}
+                    onSelectTab={onSelectTab || (() => {})}
+                />
             )}
         </main>
-    )
+    );
 }
 
-export default EventOrganizerMainBody
+export default EventOrganizerMainBody;

@@ -20,7 +20,7 @@ function Icon({size = 20, children, ...rest}: IconProps & {children: React.React
         >
             {children}
         </svg>
-    )
+    );
 }
 
 export const OverviewIcon = (props: IconProps) => (
@@ -218,6 +218,13 @@ export const SettingIcon = (props: IconProps) => (
     </Icon>
 );
 
+export const ProfileIcon = (props: IconProps) => (
+    <Icon {...props}>
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+    </Icon>
+);
+
 export const TAB_ICONS: Record<OrganTabId, React.FC<IconProps>> = {
     overview: OverviewIcon,
     events: EventsIcon,
@@ -240,9 +247,10 @@ export const TAB_ICONS: Record<OrganTabId, React.FC<IconProps>> = {
     "ai-agents": AIAgentsIcon,
     "global-ai-agent": GlobalAIAgentIcon,
     setting: SettingIcon,
+    profile: ProfileIcon,
 };
 
 export function TabIcon ({tabId, ...props}:IconProps & {tabId:OrganTabId}) {
-    const Cmp = TAB_ICONS[tabId]
-    return <Cmp {...props} />
+    const Cmp = TAB_ICONS[tabId] || ProfileIcon;
+    return <Cmp {...props} />;
 }

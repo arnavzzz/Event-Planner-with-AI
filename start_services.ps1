@@ -10,7 +10,7 @@ $ROOT_DIR = $PSScriptRoot
 
 # 1. Start FastAPI Backend (port 8000)
 Write-Host "[1/2] Launching FastAPI Backend on http://127.0.0.1:8000..." -ForegroundColor Yellow
-$BackendCommand = "& '.\backend\.venv\Scripts\uvicorn.exe' backend.main:app --host 127.0.0.1 --port 8000 --reload"
+$BackendCommand = "& '.\backend\.venv\Scripts\uvicorn.exe' backend.main:app --host 127.0.0.1 --port 8000 --reload-include '*.py' --reload-exclude '*.db*' --reload"
 $BackendProcess = Start-Process -FilePath "powershell.exe" -WorkingDirectory $ROOT_DIR -ArgumentList @("-NoExit", "-Command", $BackendCommand) -PassThru
 
 # 2. Start Vite Frontend (port 5173)

@@ -7,6 +7,9 @@ export interface EventRecord {
     startDate: string;
     endDate: string;
     vendors?: VendorRecord[];
+    status?: string;
+    isDefault?: boolean;
+    createdAt?: string;
 }
 
 export interface VendorRecord {
