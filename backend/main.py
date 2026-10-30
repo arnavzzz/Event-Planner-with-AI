@@ -429,7 +429,7 @@ async def get_user_profile(authorization: Optional[str] = Header(None)):
         user = {
             "id": "USR-DEMO-001",
             "email": "eo1@arnav.com",
-            "name": "Arnav Sharma",
+            "name": "Arnav Agrawal",
             "role": "event-organizer",
             "avatar_color": "#1B2A4A",
             "created_at": datetime.datetime.now().isoformat()

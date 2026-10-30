@@ -34,7 +34,7 @@ export default function Profile({
     const displayUser = user || {
         id: "USR-DEMO-001",
         email: "eo1@arnav.com",
-        name: "Arnav Sharma",
+        name: "Arnav Agrawal",
         role: "event-organizer" as const,
         avatar_color: "#1B2A4A",
         created_at: new Date().toISOString(),

@@ -330,7 +330,7 @@ export const authService = {
         const user = this.getStoredUser() || {
             id: "USR-DEMO-001",
             email: "eo1@arnav.com",
-            name: "Arnav Sharma",
+            name: "Arnav Agrawal",
             role: "event-organizer" as const,
             avatar_color: "#1B2A4A",
             created_at: new Date().toISOString(),
@@ -392,7 +392,7 @@ export const authService = {
             const demoUser: UserProfile = {
                 id: "USR-DEMO-001",
                 email: "eo1@arnav.com",
-                name: "Arnav Sharma",
+                name: "Arnav Agrawal",
                 role: "event-organizer",
                 avatar_color: "#1B2A4A",
                 created_at: new Date().toISOString(),

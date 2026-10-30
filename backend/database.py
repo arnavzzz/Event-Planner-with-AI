@@ -116,7 +116,7 @@ def init_db():
             user_id,
             default_email,
             pw_hash,
-            "Arnav Sharma",
+            "Arnav Agrawal",
             "event-organizer",
             "#1B2A4A",
             datetime.now().isoformat()

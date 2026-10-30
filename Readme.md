@@ -6,11 +6,11 @@
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=white)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Netlify Status](https://img.shields.io/badge/Netlify-Live_Demo-00C7B7?logo=netlify&logoColor=white)](https://6ad8627cf0caf035378e6e6d--eventmindai1.netlify.app/)
+[![Netlify Status](https://img.shields.io/badge/Netlify-Live_Demo-00C7B7?logo=netlify&logoColor=white)](https://eventmindai1.netlify.app/)
 
 An intelligent, full-stack **Event Management & Operations Platform** powered by Machine Learning and AI. Designed to streamline every phase of event execution—from AI-driven budget distribution, intelligent vendor matchmaking, and automated price negotiation, to live control room execution and post-event analytics.
 
-> 🌐 **Live Application (Netlify)**: [https://6ad8627cf0caf035378e6e6d--eventmindai1.netlify.app/](https://6ad8627cf0caf035378e6e6d--eventmindai1.netlify.app/)  
+> 🌐 **Live Application (Netlify)**: [https://eventmindai1.netlify.app/](https://eventmindai1.netlify.app/)  
 > Explore the live interactive application directly in your browser!
 
 ---
@@ -44,7 +44,7 @@ An intelligent, full-stack **Event Management & Operations Platform** powered by
 
 ## 🔑 Demo Credentials
 
-Test the application instantly on the <a href="https://6ad8627cf0caf035378e6e6d--eventmindai1.netlify.app/"
+Test the application instantly on the <a href="https://eventmindai1.netlify.app/"
    target="eventmind_demo"
    rel="noopener noreferrer">
   🚀 Test EventMind AI Live
@@ -124,7 +124,7 @@ event_planner/
 ## 🌐 Deploying to Netlify
 
 The application is deployed and live on Netlify:
-* 🔗 **Live Application URL**: [https://6ad8627cf0caf035378e6e6d--eventmindai1.netlify.app/](https://6ad8627cf0caf035378e6e6d--eventmindai1.netlify.app/)
+* 🔗 **Live Application URL**: [https://eventmindai1.netlify.app/](https://eventmindai1.netlify.app/)
 
 The repository is pre-configured with continuous deployment using [`netlify.toml`](netlify.toml) and [`_redirects`](frontend/public/_redirects).
 

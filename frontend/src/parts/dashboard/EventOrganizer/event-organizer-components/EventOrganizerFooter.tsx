@@ -59,7 +59,7 @@ function EventOrganizerFooter({isDark, activeLabel}:EventOrganizerFooterProps) {
             <div className={styles.footerContent}>
                 <div className={styles.footerMeta}>
                     <p>Event Organizer &gt; {activeLabel}</p>
-                    <p>&copy; {currentYear} EventMindAIv1. All rights reserved</p>
+                    <p>&copy; {currentYear} EventMindAIv2. All rights reserved</p>
                 </div>
                 <div className={styles.footerConnections} aria-label="Service connections" aria-live="polite">
                     <div className={styles.footerConnection}>
