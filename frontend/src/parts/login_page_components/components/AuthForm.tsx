@@ -44,11 +44,7 @@ function AuthForm({mode, onLogin, onSignUp, isDark, isLoading = false}: AuthForm
         onLogin(email, password);
     };
 
-    const handleQuickFillDemo = () => {
-        setEmail("eo1@arnav.com");
-        setPassword("123456");
-        setFormError(null);
-    };
+
 
     return (
         <div className={isDark ? styles.formPart : styles.formPartDark}>
@@ -127,27 +123,27 @@ function AuthForm({mode, onLogin, onSignUp, isDark, isLoading = false}: AuthForm
                         : "Create Account"}
                 </button>
 
-                {mode === "login" && (
-                    <button
-                        type="button"
-                        onClick={handleQuickFillDemo}
-                        disabled={isLoading}
-                        style={{
-                            marginTop: "12px",
-                            width: "100%",
-                            padding: "8px 12px",
-                            borderRadius: "6px",
-                            border: isDark ? "1px dashed rgba(255,255,255,0.25)" : "1px dashed rgba(0,0,0,0.25)",
-                            background: "transparent",
-                            color: isDark ? "#A0AEC0" : "#4A5568",
-                            fontSize: "0.82rem",
-                            cursor: "pointer",
-                            transition: "all 0.2s ease",
-                        }}
-                    >
-                        ⚡ Fill Demo Credentials (eo1@arnav.com / 123456)
-                    </button>
-                )}
+                {/*{mode === "login" && (*/}
+                {/*    <button*/}
+                {/*        type="button"*/}
+                {/*        onClick={handleQuickFillDemo}*/}
+                {/*        disabled={isLoading}*/}
+                {/*        style={{*/}
+                {/*            marginTop: "12px",*/}
+                {/*            width: "100%",*/}
+                {/*            padding: "8px 12px",*/}
+                {/*            borderRadius: "6px",*/}
+                {/*            border: isDark ? "1px dashed rgba(255,255,255,0.25)" : "1px dashed rgba(0,0,0,0.25)",*/}
+                {/*            background: "transparent",*/}
+                {/*            color: isDark ? "#A0AEC0" : "#4A5568",*/}
+                {/*            fontSize: "0.82rem",*/}
+                {/*            cursor: "pointer",*/}
+                {/*            transition: "all 0.2s ease",*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        ⚡ Fill Demo Credentials (eo1@arnav.com / 123456)*/}
+                {/*    </button>*/}
+                {/*)}*/}
             </form>
         </div>
     );
